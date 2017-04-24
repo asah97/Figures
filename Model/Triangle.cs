@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace Figures
 {
-    //Класс "треугольник"
+    //Класс "Треугольник"
     public class Triangle: FigureBase
     {
         double _sideA;

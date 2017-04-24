@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace Figures
 {
-    //Список фигур
+    //Список, содержащий фигуры
     public class FiguresList
     {
         public static List<IFigure> listFigures = new List<IFigure>();

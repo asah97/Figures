@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace Figures
 {
-    //Класс "прямоугольник"
+    //Класс "Прямоугольник"
     public class Rectangle: FigureBase
     {
         double _width;

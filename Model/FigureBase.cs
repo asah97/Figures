@@ -13,7 +13,7 @@ namespace Figures
         double _startX;
         double _startY;
             
-        //Инициализация координаты X начальной точки фигуры
+        //Инициализация координаты X начальной точки
         public double StartX
         {
             set
@@ -26,7 +26,7 @@ namespace Figures
             }
         }
 
-        //Инициализация координаты Y начальной точки фигуры
+        //Инициализация координаты Y начальной точки
         public double StartY
         {
             set
