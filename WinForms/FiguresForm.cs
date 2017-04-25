@@ -21,7 +21,7 @@ namespace WinForms
             InitializeComponent();
         }
 
-        //Сериализайзер
+        //Сериализация Newtosoft Json
         JsonSerializer serializer = new JsonSerializer()
         {
             TypeNameHandling = TypeNameHandling.All,
