@@ -27,9 +27,7 @@ namespace Figures
                 return _width;
             }          
         }
-
-        
-
+                
         //Инициализация длины прямоугольника        
         public double Length
         {
@@ -43,7 +41,6 @@ namespace Figures
             {
                 return _length;
             }
-            
         }
         
         //Нахождение площади прямоугольника         
