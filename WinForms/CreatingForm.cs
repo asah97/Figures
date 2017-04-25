@@ -32,6 +32,8 @@ namespace WinForms
             #endif
         }
 
+        //При переключении фигуры в combobox автоматически становятся видимыми и невидимыми
+        //нужные textbox'ы
         private void comboBoxFigures_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (comboBoxFigureType.SelectedIndex)
