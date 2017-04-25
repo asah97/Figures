@@ -12,7 +12,7 @@ namespace Figures
     {
         double _radius;
 
-        //Инициализация радиуса круга   
+        //Инициализация и возврат радиуса круга   
         public double Radius
         {
             set
