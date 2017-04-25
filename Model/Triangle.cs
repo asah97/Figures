@@ -33,6 +33,7 @@ namespace Figures
 
         }
         
+        //Возврат и инициализация стороны треугольника
         public double SideA
         {
             get
