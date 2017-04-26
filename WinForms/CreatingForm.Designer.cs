@@ -360,6 +360,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(350, 257);
             this.Controls.Add(this.textBoxSquare);
             this.Controls.Add(this.buttonCountSquare);
@@ -370,6 +371,7 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CreatingForm";
             this.Text = "CreatingForm";
             this.groupBox1.ResumeLayout(false);
