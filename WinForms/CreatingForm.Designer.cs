@@ -112,6 +112,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.groupBox1.Controls.Add(this.maskedTextBoxX);
             this.groupBox1.Controls.Add(this.label1);
@@ -126,6 +128,7 @@
             // 
             // buttonOk
             // 
+            this.buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonOk.Location = new System.Drawing.Point(177, 222);
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Size = new System.Drawing.Size(75, 23);
@@ -136,6 +139,7 @@
             // 
             // buttonCancel
             // 
+            this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCancel.Location = new System.Drawing.Point(263, 222);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
@@ -146,6 +150,7 @@
             // 
             // buttonRandomData
             // 
+            this.buttonRandomData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonRandomData.Location = new System.Drawing.Point(11, 222);
             this.buttonRandomData.Name = "buttonRandomData";
             this.buttonRandomData.Size = new System.Drawing.Size(92, 23);
@@ -157,6 +162,8 @@
             // 
             // comboBoxFigureType
             // 
+            this.comboBoxFigureType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxFigureType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFigureType.Items.AddRange(new object[] {
             "Прямоугольник",
@@ -170,6 +177,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.maskedTextBoxSideC);
@@ -191,6 +201,9 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(10, 21);
             this.label8.Name = "label8";
@@ -200,6 +213,9 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(10, 45);
             this.label7.Name = "label7";
@@ -209,6 +225,8 @@
             // 
             // maskedTextBoxSideC
             // 
+            this.maskedTextBoxSideC.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.maskedTextBoxSideC.Location = new System.Drawing.Point(205, 68);
             this.maskedTextBoxSideC.Mask = "09.099";
             this.maskedTextBoxSideC.Name = "maskedTextBoxSideC";
@@ -218,6 +236,8 @@
             // 
             // maskedTextBoxSideB
             // 
+            this.maskedTextBoxSideB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.maskedTextBoxSideB.Location = new System.Drawing.Point(205, 42);
             this.maskedTextBoxSideB.Mask = "09.099";
             this.maskedTextBoxSideB.Name = "maskedTextBoxSideB";
@@ -227,6 +247,8 @@
             // 
             // maskedTextBoxSideA
             // 
+            this.maskedTextBoxSideA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.maskedTextBoxSideA.Location = new System.Drawing.Point(205, 17);
             this.maskedTextBoxSideA.Mask = "09.099";
             this.maskedTextBoxSideA.Name = "maskedTextBoxSideA";
@@ -236,6 +258,8 @@
             // 
             // maskedTextBoxRadius
             // 
+            this.maskedTextBoxRadius.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.maskedTextBoxRadius.Location = new System.Drawing.Point(50, 69);
             this.maskedTextBoxRadius.Mask = "09.099";
             this.maskedTextBoxRadius.Name = "maskedTextBoxRadius";
@@ -245,6 +269,8 @@
             // 
             // maskedTextBoxLength
             // 
+            this.maskedTextBoxLength.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.maskedTextBoxLength.Location = new System.Drawing.Point(50, 43);
             this.maskedTextBoxLength.Mask = "09.099";
             this.maskedTextBoxLength.Name = "maskedTextBoxLength";
@@ -254,8 +280,11 @@
             // 
             // maskedTextBoxWidth
             // 
+            this.maskedTextBoxWidth.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.maskedTextBoxWidth.Location = new System.Drawing.Point(50, 18);
             this.maskedTextBoxWidth.Mask = "09.099";
+            this.maskedTextBoxWidth.MaximumSize = new System.Drawing.Size(500, 500);
             this.maskedTextBoxWidth.Name = "maskedTextBoxWidth";
             this.maskedTextBoxWidth.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxWidth.TabIndex = 4;
@@ -263,6 +292,8 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(167, 71);
             this.label6.Name = "label6";
@@ -272,6 +303,8 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(167, 45);
             this.label5.Name = "label5";
@@ -281,6 +314,8 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(167, 18);
             this.label4.Name = "label4";
@@ -290,6 +325,9 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(10, 72);
             this.label3.Name = "label3";
@@ -299,7 +337,7 @@
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.Location = new System.Drawing.Point(176, 198);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(41, 13);
@@ -308,6 +346,7 @@
             // 
             // buttonCountSquare
             // 
+            this.buttonCountSquare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonCountSquare.Location = new System.Drawing.Point(11, 193);
             this.buttonCountSquare.Name = "buttonCountSquare";
             this.buttonCountSquare.Size = new System.Drawing.Size(91, 23);
@@ -318,6 +357,7 @@
             // 
             // textBoxSquare
             // 
+            this.textBoxSquare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxSquare.Location = new System.Drawing.Point(217, 196);
             this.textBoxSquare.Name = "textBoxSquare";
             this.textBoxSquare.ReadOnly = true;
@@ -360,6 +400,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(350, 257);
             this.Controls.Add(this.textBoxSquare);
             this.Controls.Add(this.buttonCountSquare);
@@ -370,6 +411,7 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CreatingForm";
             this.Text = "CreatingForm";
             this.groupBox1.ResumeLayout(false);
