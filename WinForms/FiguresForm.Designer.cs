@@ -53,6 +53,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBoxSearchType);
             this.groupBox1.Controls.Add(this.buttonModify);
@@ -61,14 +64,14 @@
             this.groupBox1.Controls.Add(this.dataGridViewFigures);
             this.groupBox1.Location = new System.Drawing.Point(9, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(461, 187);
+            this.groupBox1.Size = new System.Drawing.Size(457, 181);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Object List";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Location = new System.Drawing.Point(247, 159);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 13);
@@ -77,6 +80,7 @@
             // 
             // textBoxSearchType
             // 
+            this.textBoxSearchType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxSearchType.Location = new System.Drawing.Point(349, 156);
             this.textBoxSearchType.Name = "textBoxSearchType";
             this.textBoxSearchType.Size = new System.Drawing.Size(100, 20);
@@ -85,6 +89,7 @@
             // 
             // buttonModify
             // 
+            this.buttonModify.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonModify.Location = new System.Drawing.Point(134, 154);
             this.buttonModify.Name = "buttonModify";
             this.buttonModify.Size = new System.Drawing.Size(58, 23);
@@ -95,6 +100,7 @@
             // 
             // buttonAdd
             // 
+            this.buttonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonAdd.Location = new System.Drawing.Point(6, 154);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(58, 23);
@@ -105,6 +111,7 @@
             // 
             // buttonRemove
             // 
+            this.buttonRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonRemove.Location = new System.Drawing.Point(70, 154);
             this.buttonRemove.Name = "buttonRemove";
             this.buttonRemove.Size = new System.Drawing.Size(58, 23);
@@ -117,6 +124,11 @@
             // 
             this.dataGridViewFigures.AllowUserToAddRows = false;
             this.dataGridViewFigures.AllowUserToDeleteRows = false;
+            this.dataGridViewFigures.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewFigures.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewFigures.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewFigures.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewFigures.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FigureType,
@@ -134,32 +146,37 @@
             this.FigureType.HeaderText = "Figure type";
             this.FigureType.Name = "FigureType";
             this.FigureType.ReadOnly = true;
+            this.FigureType.Width = 84;
             // 
             // ColumnStartX
             // 
             this.ColumnStartX.HeaderText = "Start X";
             this.ColumnStartX.Name = "ColumnStartX";
             this.ColumnStartX.ReadOnly = true;
+            this.ColumnStartX.Width = 64;
             // 
             // ColumnStartY
             // 
             this.ColumnStartY.HeaderText = "Start Y";
             this.ColumnStartY.Name = "ColumnStartY";
             this.ColumnStartY.ReadOnly = true;
+            this.ColumnStartY.Width = 64;
             // 
             // ColumnSquare
             // 
             this.ColumnSquare.HeaderText = "Square";
             this.ColumnSquare.Name = "ColumnSquare";
             this.ColumnSquare.ReadOnly = true;
+            this.ColumnSquare.Width = 66;
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripFile});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(470, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(61, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
