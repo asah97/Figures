@@ -7,13 +7,17 @@ using Newtonsoft.Json;
 
 namespace Figures
 {
-    //Абстрактный класс основы фигуры
+    /// <summary>
+    /// Абстрактный класс основы фигуры
+    /// </summary>
     public abstract class FigureBase: IFigure
     {
         double _startX;
         double _startY;
-            
-        //Инициализация координаты X начальной точки
+
+        /// <summary>
+        /// Инициализация координаты X начальной точки
+        /// </summary>    
         public double StartX
         {
             set
@@ -26,7 +30,9 @@ namespace Figures
             }
         }
 
-        //Инициализация координаты Y начальной точки
+        /// <summary>
+        /// Инициализация координаты Y начальной точки
+        /// </summary>
         public double StartY
         {
             set
@@ -39,7 +45,10 @@ namespace Figures
             }
         }
 
-        //Абстрактный метод нахождения площади фигуры
+        /// <summary>
+        /// Вычисление площади фигуры
+        /// </summary>
+        /// <returns> Площадь фигуры. </returns>
         public abstract double GetArea();
     }
 }

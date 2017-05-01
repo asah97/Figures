@@ -7,7 +7,9 @@ using Newtonsoft.Json;
 
 namespace Figures
 {
-    //Класс "Треугольник"
+    /// <summary>
+    /// Класс, описывающий треугольник
+    /// </summary>
     public class Triangle: FigureBase
     {
         double _sideA;
@@ -16,7 +18,12 @@ namespace Figures
 
         double _sideC;
 
-        //Метод, инициализирующий стороны треугольника
+        /// <summary>
+        /// Инициализация сторон треугольника
+        /// </summary>
+        /// <param name="a"> Первая сторона треугольника </param>
+        /// <param name="b"> Вторая сторона треугольника </param>
+        /// <param name="c"> Третья сторона треугольника </param>
         public void SetSides(double a, double b, double c)
         {
             if ((a < 0) || (b < 0) || (c < 0))
@@ -33,7 +40,9 @@ namespace Figures
 
         }
         
-        //Возврат и инициализация стороны треугольника
+        /// <summary>
+        /// Свойство, выражающее первую сторону треугольника
+        /// </summary>
         public double SideA
         {
             get
@@ -46,6 +55,9 @@ namespace Figures
             }
         }
 
+        /// <summary>
+        /// Свойство, выражающее вторую сторону треугольника
+        /// </summary>
         public double SideB
         {
             get
@@ -58,6 +70,9 @@ namespace Figures
             }
         }
 
+        /// <summary>
+        /// Свойство, выражающее третью сторону треугольника
+        /// </summary>
         public double SideC
         {
             get
@@ -70,7 +85,10 @@ namespace Figures
             }
         }
 
-        //Нахождение площади треугольника по формуле Герона
+        /// <summary>
+        /// Нахождение площади треугольника
+        /// </summary>
+        /// <returns> Площадь треугольника </returns>
         public override double GetArea()
         {
             double halfPerim = 0.5 * (_sideA + _sideB + _sideC);

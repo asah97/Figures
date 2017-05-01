@@ -7,12 +7,16 @@ using Newtonsoft.Json;
 
 namespace Figures
 {
-    //Класс "круг"
+    /// <summary>
+    /// Класс, описывающий круг
+    /// </summary>
     public class Circle: FigureBase
     {
         double _radius;
 
-        //Инициализация и возврат радиуса круга   
+        /// <summary>
+        /// Свойство, выражающее радиус круга   
+        /// </summary>
         public double Radius
         {
             set
@@ -28,7 +32,10 @@ namespace Figures
             }
         }
 
-        //Нахождение площади круга
+        /// <summary>
+        /// Нахождение площади круга
+        /// </summary>
+        /// <returns> Площадь круга </returns>
         public override double GetArea()
         {
             return 3.14 * Math.Pow(_radius, 2);

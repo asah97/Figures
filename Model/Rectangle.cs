@@ -7,13 +7,17 @@ using Newtonsoft.Json;
 
 namespace Figures
 {
-    //Класс "Прямоугольник"
+    /// <summary>
+    /// Класс, описывыющий прямоугольник
+    /// </summary>
     public class Rectangle: FigureBase
     {
         double _width;
         double _length;
         
-        //Инициализация ширины прямоугольника                        
+        /// <summary>
+        /// Свойство, выражающее ширину прямоугольника
+        /// </summary>
         public double Width
         {
             set
@@ -27,8 +31,10 @@ namespace Figures
                 return _width;
             }          
         }
-                
-        //Инициализация длины прямоугольника        
+
+        /// <summary>
+        /// Свойство, выражающее длину прямоугольника  
+        /// </summary>
         public double Length
         {
             set
@@ -43,12 +49,13 @@ namespace Figures
             }
         }
         
-        //Нахождение площади прямоугольника         
+        /// <summary>
+        /// Нахождение площади прямоугольника
+        /// </summary>
+        /// <returns> Площадь прямоугольника </returns>
         public override double GetArea()
         {
             return _length * _width;
         }
-
     }
-          
 }

@@ -7,7 +7,9 @@ using Newtonsoft.Json;
 
 namespace Figures
 {
-    //Интерфейс фигуры
+    /// <summary>
+    /// Интерфейс фигуры
+    /// </summary>
     public interface IFigure
     {
         double StartX { get; set; }
