@@ -38,7 +38,7 @@ namespace Figures
         /// <returns> Площадь круга </returns>
         public override double GetArea()
         {
-            return 3.14 * Math.Pow(_radius, 2);
+            return Math.Round(3.14 * Math.Pow(_radius, 2), 2);
         }
     }
 }

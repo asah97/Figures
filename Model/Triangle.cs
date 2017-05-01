@@ -93,7 +93,7 @@ namespace Figures
         {
             double halfPerim = 0.5 * (_sideA + _sideB + _sideC);
 
-            return Math.Sqrt(halfPerim * (halfPerim - _sideA) * (halfPerim - _sideB) * (halfPerim - _sideC));
+            return Math.Round(Math.Sqrt(halfPerim * (halfPerim - _sideA) * (halfPerim - _sideB) * (halfPerim - _sideC)), 2);
         }
 
     }

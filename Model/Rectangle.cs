@@ -55,7 +55,7 @@ namespace Figures
         /// <returns> Площадь прямоугольника </returns>
         public override double GetArea()
         {
-            return _length * _width;
+            return Math.Round(_length * _width, 2);
         }
     }
 }
