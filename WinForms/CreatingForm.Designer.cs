@@ -129,7 +129,7 @@
             // buttonOk
             // 
             this.buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOk.Location = new System.Drawing.Point(177, 222);
+            this.buttonOk.Location = new System.Drawing.Point(177, 228);
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Size = new System.Drawing.Size(75, 23);
             this.buttonOk.TabIndex = 8;
@@ -140,7 +140,7 @@
             // buttonCancel
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCancel.Location = new System.Drawing.Point(263, 222);
+            this.buttonCancel.Location = new System.Drawing.Point(263, 228);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 9;
@@ -151,7 +151,7 @@
             // buttonRandomData
             // 
             this.buttonRandomData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonRandomData.Location = new System.Drawing.Point(11, 222);
+            this.buttonRandomData.Location = new System.Drawing.Point(11, 228);
             this.buttonRandomData.Name = "buttonRandomData";
             this.buttonRandomData.Size = new System.Drawing.Size(92, 23);
             this.buttonRandomData.TabIndex = 10;
@@ -338,7 +338,7 @@
             // label9
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.Location = new System.Drawing.Point(176, 198);
+            this.label9.Location = new System.Drawing.Point(176, 204);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(41, 13);
             this.label9.TabIndex = 13;
@@ -347,7 +347,7 @@
             // buttonCountSquare
             // 
             this.buttonCountSquare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonCountSquare.Location = new System.Drawing.Point(11, 193);
+            this.buttonCountSquare.Location = new System.Drawing.Point(11, 199);
             this.buttonCountSquare.Name = "buttonCountSquare";
             this.buttonCountSquare.Size = new System.Drawing.Size(91, 23);
             this.buttonCountSquare.TabIndex = 15;
@@ -358,7 +358,7 @@
             // textBoxSquare
             // 
             this.textBoxSquare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSquare.Location = new System.Drawing.Point(217, 196);
+            this.textBoxSquare.Location = new System.Drawing.Point(217, 202);
             this.textBoxSquare.Name = "textBoxSquare";
             this.textBoxSquare.ReadOnly = true;
             this.textBoxSquare.Size = new System.Drawing.Size(100, 20);
@@ -401,7 +401,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(350, 257);
+            this.ClientSize = new System.Drawing.Size(350, 263);
             this.Controls.Add(this.textBoxSquare);
             this.Controls.Add(this.buttonCountSquare);
             this.Controls.Add(this.label9);

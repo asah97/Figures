@@ -22,8 +22,8 @@ namespace Figures
             set
             {
                 _radius = value;
-                if (_radius < 0)
-                    throw new ArgumentException("Было введено отрицательное значение. Значение должно быть положительным!");
+                if (_radius <= 0 || _radius > 99.999)
+                    throw new ArgumentException("Было введено отрицательное или нулевое значение или значение, нахожящееся за пределом диапазона допустимых значений. Допустим ввод значений от 0.001 до 99.999");
             }
 
             get
@@ -39,6 +39,7 @@ namespace Figures
         public override double GetArea()
         {
             return Math.Round(3.14 * Math.Pow(_radius, 2), 2);
+            //return 3.14 * _radius * _radius;
         }
     }
 }

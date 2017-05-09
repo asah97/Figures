@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
 
 namespace Figures
 {
@@ -26,18 +21,17 @@ namespace Figures
         /// <param name="c"> Третья сторона треугольника </param>
         public void SetSides(double a, double b, double c)
         {
-            if ((a < 0) || (b < 0) || (c < 0))
-                throw new ArgumentException("Было введено отрицательное значение одной из трех сторон. Значение должно быть положительным!");
-            else
+            if ((a <= 0) || (b <= 0) || (c <= 0))
+                throw new ArgumentException("Было введено отрицательное или нулевое значение одной из трех сторон. Значение должно быть положительным!");
+            if ((a > 99.999) || (b > 99.999) || (c > 99.999))
+                throw new ArgumentException("Было введено значение одной из сторон, находящееся за пределом допустимых");
+            if (((a + b) < c) || ((b + c) < a) || ((a + c) < b))
+                throw new ArgumentException("Сумма любых двух сторон треугольника должна быть больше третьей стороны");
             {
                 _sideA = a;
                 _sideB = b;
                 _sideC = c;
             }
-            if (((_sideA + _sideB) < _sideC) || ((_sideB + _sideC) < _sideA) || ((_sideA + _sideC) < _sideB))
-                throw new ArgumentException("Сумма любых двух сторон треугольника должна быть больше третьей стороны");
-
-
         }
         
         /// <summary>
@@ -52,6 +46,8 @@ namespace Figures
             set
             {
                 _sideA = value;
+                if (_sideA <= 0 || _sideA > 99.999)
+                    throw new ArgumentException("Было введено отрицательное или нулевое значение или значение, нахожящееся за пределом диапазона допустимых значений. Допустим ввод значений от 0.001 до 99.999");
             }
         }
 
@@ -67,6 +63,8 @@ namespace Figures
             set
             {
                 _sideB = value;
+               if (_sideB <= 0 || _sideB > 99.999)
+                    throw new ArgumentException("Было введено отрицательное или нулевое значение или значение, нахожящееся за пределом диапазона допустимых значений. Допустим ввод значений от 0.001 до 99.999");
             }
         }
 
@@ -82,6 +80,8 @@ namespace Figures
             set
             {
                 _sideC = value;
+                if (_sideC <= 0 || _sideC > 99.999)
+                    throw new ArgumentException("Было введено отрицательное или нулевое значение или значение, нахожящееся за пределом диапазона допустимых значений. Допустим ввод значений от 0.001 до 99.999");
             }
         }
 

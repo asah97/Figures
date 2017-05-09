@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Figures;
 
@@ -200,7 +193,9 @@ namespace WinForms
         private void buttonCountSquare_Click(object sender, EventArgs e)
         {
             if ((_maskedWidth && _maskedLength) || (_maskedRadius) || (_maskedSideA && _maskedSideB & _maskedSideC))
+            {
                 textBoxSquare.Text = Convert.ToString(Figure.GetArea());
+            }
             else
                 MessageBox.Show("Не все величины были введены");
             
@@ -361,7 +356,7 @@ namespace WinForms
                 _maskedSideC = true;
             }
         }
-
+               
     }
     
 }

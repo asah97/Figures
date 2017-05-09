@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
 
 namespace Figures
 {
@@ -23,8 +18,8 @@ namespace Figures
             set
             {
                 _width = value;
-                if (_width < 0)
-                    throw new ArgumentException("Было введено отрицательное значение. Значение должно быть положительным!");
+                if (_width <= 0 || _width > 99.999)
+                    throw new ArgumentException("Было введено отрицательное или нулевое значение или значение, нахожящееся за пределом диапазона допустимых значений. Допустим ввод значений от 0.001 до 99.999");
             }
             get
             {
@@ -40,8 +35,8 @@ namespace Figures
             set
             {
                 _length = value;
-                if (_length < 0)
-                    throw new ArgumentException("Было введено отрицательное значение. Значение должно быть положительным!");
+                if (_length <= 0 || _length > 99.999)
+                    throw new ArgumentException("Было введено отрицательное или нулевое значение или значение, нахожящееся за пределом диапазона допустимых значений. Допустим ввод значений от 0.001 до 99.999");
             }
             get
             {

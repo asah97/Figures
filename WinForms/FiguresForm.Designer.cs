@@ -127,8 +127,6 @@
             this.dataGridViewFigures.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewFigures.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridViewFigures.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewFigures.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewFigures.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FigureType,
@@ -146,28 +144,24 @@
             this.FigureType.HeaderText = "Figure type";
             this.FigureType.Name = "FigureType";
             this.FigureType.ReadOnly = true;
-            this.FigureType.Width = 84;
             // 
             // ColumnStartX
             // 
             this.ColumnStartX.HeaderText = "Start X";
             this.ColumnStartX.Name = "ColumnStartX";
             this.ColumnStartX.ReadOnly = true;
-            this.ColumnStartX.Width = 64;
             // 
             // ColumnStartY
             // 
             this.ColumnStartY.HeaderText = "Start Y";
             this.ColumnStartY.Name = "ColumnStartY";
             this.ColumnStartY.ReadOnly = true;
-            this.ColumnStartY.Width = 64;
             // 
             // ColumnSquare
             // 
             this.ColumnSquare.HeaderText = "Square";
             this.ColumnSquare.Name = "ColumnSquare";
             this.ColumnSquare.ReadOnly = true;
-            this.ColumnSquare.Width = 66;
             // 
             // toolStrip1
             // 
