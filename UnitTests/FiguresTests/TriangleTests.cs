@@ -57,14 +57,14 @@ namespace UnitTests.FiguresTests
             triangle.SideA = sideC;
         }
         [Test]
-        [TestCase(21.5, 24.3, 23.5,  TestName = "Тестирование метода GetArea при значении радиуса равного 44.4")]
-        public void GetAreaTest(double sideA, double sideB, double sideC)
+        [TestCase(21.5, 24.3, 23.5, Result = 229.31,  TestName = "Тестирование метода GetArea при сторонах треугольника равных 21.5, 24.3, 23.5.")]
+        public double GetAreaTest(double sideA, double sideB, double sideC)
         {
             var triangle = new Triangle();
             triangle.SideA = sideA;
             triangle.SideB = sideB;
             triangle.SideC = sideC;
-            Assert.AreEqual(triangle.GetArea(), 229.31);
+            return triangle.GetArea();
         }
     }
 

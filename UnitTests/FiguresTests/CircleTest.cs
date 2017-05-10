@@ -32,14 +32,27 @@ namespace UnitTests.FiguresTests
         /// Тестирование правильности расчета площади через метод GetArea
         /// </summary>
         /// <param name="radius"> Радиус </param>
+        /// <param name="square"> Площадь </param>
         [Test]
-        [TestCase(44.4, TestName = "Тестирование метода GetArea при значении радиуса равного 44.4")]
-        public void GetAreaTest(double radius)
+        [TestCase(44.4, 6190.07, TestName = "Тестирование метода GetArea при значении радиуса равного 44.4")]
+        [TestCase(23.1, 1675.54, TestName = "Тестирование метода GetArea при значении радиуса равного 23.1")]
+        [TestCase(35.2, 3890.59, TestName = "Тестирование метода GetArea при значении радиуса равного 35.2")]
+        [TestCase(56.8, 10130.39, TestName = "Тестирование метода GetArea при значении радиуса равного 56.8")]
+        [TestCase(9.3, 271.58, TestName = "Тестирование метода GetArea при значении радиуса равного 9.3")]
+        public void GetAreaTest(double radius, double square)
         {
             var circle = new Circle();
             circle.Radius = radius;
-            Assert.AreEqual(circle.GetArea(), 6190.07);
+            var result = circle.GetArea();
+            Assert.AreEqual(square, result);
         }
 
+        [TestCase(44.4, Result = 6190.07, TestName = "tArea при значении радиуса равного 44.4")]
+        public double GetAreaTest2(double radius)
+        {
+            var circle = new Circle();
+            circle.Radius = radius;
+            return circle.GetArea();
+        }
     }
 }

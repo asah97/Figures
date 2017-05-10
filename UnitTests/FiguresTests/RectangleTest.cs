@@ -48,13 +48,13 @@ namespace UnitTests.FiguresTests
         /// <param name="width"> Ширина </param>
         /// <param name="length"> Длина </param>
         [Test]
-        [TestCase(22.14, 44.56,  TestName = "Тестирование метода GetArea при значении ширины и длины равных 22.14, 44.56 соответсвенно")]
-        public void GetAreaTest(double width, double length)
+        [TestCase(22.14, 44.56, Result = 986.56,  TestName = "Тестирование метода GetArea при значении ширины и длины равных 22.14, 44.56 соответсвенно")]
+        public double GetAreaTest(double width, double length)
         {
             var rectangle = new Rectangle();
             rectangle.Width = width;
             rectangle.Length = length;
-            Assert.AreEqual(rectangle.GetArea(), 986.56);
+            return rectangle.GetArea();
         }
     }
 }
