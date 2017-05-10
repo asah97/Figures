@@ -87,6 +87,11 @@ namespace WinForms
                         dataGridViewFigures.Rows[i].Visible = true;
                     }
             }
+            if (textBoxSearchType.Text == "")
+            {
+                for (int i = 0; i < dataGridViewFigures.Rows.Count; i++)
+                    dataGridViewFigures.Rows[i].Visible = true;
+            }
         }
 
         //Сериализация (сохранение) списка
@@ -98,7 +103,7 @@ namespace WinForms
             }      
             else if (saveFile.ShowDialog() == DialogResult.OK)
             {
-                saveFile.Filter = "Списки фигур (.pmt)|*.pmt";
+                saveFile.Filter = "Списки фигур (.goo)|*.goo";
                 using (StreamWriter sw = new StreamWriter(saveFile.FileName))
                 using (JsonWriter writer = new JsonTextWriter(sw))
                 {
@@ -111,7 +116,7 @@ namespace WinForms
         //Десериализация (открытие) списка
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openFile.Filter = "Списки фигур (.pmt)|*.pmt";
+            openFile.Filter = "Списки фигур (.goo)|*.goo";
             if (openFile.ShowDialog() == DialogResult.OK)
             {
                 using (StreamReader sr = new StreamReader(openFile.FileName))
@@ -126,5 +131,7 @@ namespace WinForms
                 }
             }
         }
+
+      
     }
 }
