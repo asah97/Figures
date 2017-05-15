@@ -77,7 +77,7 @@ namespace WinForms
         private void buttonOk_Click(object sender, EventArgs e)
         {
             bool exitCondition = false;
-            if ((maskedTextBoxX.Text != "   ,") && (maskedTextBoxY.Text != "   ,") && (maskedTextBoxWidth.Text != "  ,") && (maskedTextBoxLength.Text != "  ,") && (maskedTextBoxRadius.Text != "  ,") && (maskedTextBoxSideA.Text != "  ,") && (maskedTextBoxSideB.Text != "  ,") && (maskedTextBoxSideC.Text != "  ,"))
+            if (((maskedTextBoxX.Text != "   ,") && (maskedTextBoxY.Text != "   ,")) || ((maskedTextBoxWidth.Text != "  ,") && (maskedTextBoxLength.Text != "  ,")) || (maskedTextBoxRadius.Text != "  ,") || ((maskedTextBoxSideA.Text != "  ,") && (maskedTextBoxSideB.Text != "  ,") && (maskedTextBoxSideC.Text != "  ,")))
             {
                  exitCondition = true;
             }

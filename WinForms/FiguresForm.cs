@@ -21,19 +21,20 @@ namespace WinForms
             Formatting = Formatting.Indented,
             NullValueHandling = NullValueHandling.Include
         };
-      
+
         //Кнопка добавления строки с данными о фигуре в список через форму создания фигуры
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             CreatingForm formAdd = new CreatingForm();
-            
+
             if (formAdd.ShowDialog() == DialogResult.OK)
             {
                 var figure = formAdd.Figure;
-                this.dataGridViewFigures.Rows.Add(figure.GetType().Name, figure.StartX, figure.StartY, figure.GetArea());
+                this.dataGridViewFigures.Rows.Add(figure.GetType().Name, figure.StartX, figure.StartY,
+                    figure.GetArea());
                 FiguresList.listFigures.Add(figure);
             }
-                   
+
         }
 
         //Кнопка удаления строки из списка 
@@ -74,7 +75,7 @@ namespace WinForms
                 }
             }
         }
-         
+
         //Поиск данных по названию фигуры     
         private void textBoxSearchType_TextChanged(object sender, EventArgs e)
         {
@@ -82,10 +83,10 @@ namespace WinForms
             for (int i = 0; i < dataGridViewFigures.Rows.Count; i++)
             {
                 dataGridViewFigures.Rows[i].Visible = false;
-                    if (dataGridViewFigures[0, i].Value.ToString() == textBoxSearchType.Text)
-                    {
-                        dataGridViewFigures.Rows[i].Visible = true;
-                    }
+                if (dataGridViewFigures[0, i].Value.ToString() == textBoxSearchType.Text)
+                {
+                    dataGridViewFigures.Rows[i].Visible = true;
+                }
             }
             if (textBoxSearchType.Text == "")
             {
@@ -100,7 +101,7 @@ namespace WinForms
             if (FiguresList.listFigures.Count == 0)
             {
                 MessageBox.Show("Список фигур пуст.");
-            }      
+            }
             else if (saveFile.ShowDialog() == DialogResult.OK)
             {
                 saveFile.Filter = "Списки фигур (.goo)|*.goo";
@@ -122,7 +123,7 @@ namespace WinForms
                 using (StreamReader sr = new StreamReader(openFile.FileName))
                 using (JsonReader reader = new JsonTextReader(sr))
                 {
-                    FiguresList.listFigures = (List<IFigure>)serializer.Deserialize(reader, typeof(List<IFigure>));
+                    FiguresList.listFigures = (List<IFigure>) serializer.Deserialize(reader, typeof(List<IFigure>));
                     dataGridViewFigures.Rows.Clear();
                     foreach (var data in FiguresList.listFigures)
                     {
@@ -132,6 +133,5 @@ namespace WinForms
             }
         }
 
-      
     }
 }
