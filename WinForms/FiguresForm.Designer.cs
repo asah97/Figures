@@ -46,6 +46,7 @@
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFile = new System.Windows.Forms.SaveFileDialog();
             this.openFile = new System.Windows.Forms.OpenFileDialog();
+            this.objectControl1 = new WinForms.ObjectControl();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFigures)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -201,12 +202,21 @@
             // 
             this.openFile.FileName = "Открыть список";
             // 
+            // objectControl1
+            // 
+            this.objectControl1.Location = new System.Drawing.Point(466, 28);
+            this.objectControl1.Name = "objectControl1";
+            this.objectControl1.Object = null;
+            this.objectControl1.Size = new System.Drawing.Size(344, 247);
+            this.objectControl1.TabIndex = 2;
+            // 
             // FiguresForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(531, 248);
+            this.ClientSize = new System.Drawing.Size(782, 254);
+            this.Controls.Add(this.objectControl1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -241,6 +251,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SaveFileDialog saveFile;
         private System.Windows.Forms.OpenFileDialog openFile;
+        private ObjectControl objectControl1;
     }
 }
 
