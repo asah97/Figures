@@ -1,0 +1,9 @@
+C:\Users\andreygolubkow\Source\Repos\Figures\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\andreygolubkow\Source\Repos\Figures\UnitTests\bin\Debug\UnitTests.dll
+C:\Users\andreygolubkow\Source\Repos\Figures\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\andreygolubkow\Source\Repos\Figures\UnitTests\bin\Debug\Model.dll
+C:\Users\andreygolubkow\Source\Repos\Figures\UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\andreygolubkow\Source\Repos\Figures\UnitTests\bin\Debug\Model.pdb
+C:\Users\andreygolubkow\Source\Repos\Figures\UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\andreygolubkow\Source\Repos\Figures\UnitTests\obj\Debug\UnitTests.dll
+C:\Users\andreygolubkow\Source\Repos\Figures\UnitTests\obj\Debug\UnitTests.pdb
