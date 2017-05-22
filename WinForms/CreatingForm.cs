@@ -29,6 +29,8 @@ namespace WinForms
         //нужные textbox'ы
         private void comboBoxFigures_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //NOTE: Можно сократить код, написав конструкцию
+            //maskedTextBoxWidth.Visible = comboBoxFigureType.SelectedIndex == 0
             switch (comboBoxFigureType.SelectedIndex)
             {
                 case 0:
@@ -117,7 +119,8 @@ namespace WinForms
                 Close();
             }
         }
-
+        
+        //TODO: Обычно приватные переменные создают вначале класса
         private IFigure _figure;
 
         //Описание данных о фигуре

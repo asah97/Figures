@@ -3,3 +3,5 @@ Model/obj
 Model/obj
 WinForms/bin
 WinForms/obj
+/UnitTests/bin/Debug
+/packages/NUnit.2.6.4
