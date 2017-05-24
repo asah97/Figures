@@ -15,7 +15,7 @@ namespace WinForms
         }
 
         //Сериализация Newtosoft Json
-        JsonSerializer serializer = new JsonSerializer()
+        public  JsonSerializer serializer = new JsonSerializer()
         {
             TypeNameHandling = TypeNameHandling.All,
             Formatting = Formatting.Indented,
@@ -96,7 +96,8 @@ namespace WinForms
         }
 
         //Сериализация (сохранение) списка
-        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+       
+        private void savingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (FiguresList.listFigures.Count == 0)
             {
@@ -114,12 +115,12 @@ namespace WinForms
             }
         }
 
-        //Десериализация (открытие) списка
-        private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
+        private void openingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openFile.Filter = "Списки фигур (.goo)|*.goo";
             if (openFile.ShowDialog() == DialogResult.OK)
             {
+                //TODO: скобки {} после юзинг
                 using (StreamReader sr = new StreamReader(openFile.FileName))
                 using (JsonReader reader = new JsonTextReader(sr))
                 {

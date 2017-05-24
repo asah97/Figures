@@ -31,14 +31,16 @@ namespace WinForms
         //нужные textbox'ы
         private void comboBoxFigures_SelectedIndexChanged(object sender, EventArgs e)
         {
-             maskedTextBoxWidth.Visible = comboBoxFigureType.SelectedIndex == 0;
-             maskedTextBoxLength.Visible = comboBoxFigureType.SelectedIndex == 0;
-             maskedTextBoxRadius.Visible = comboBoxFigureType.SelectedIndex == 1;
-             maskedTextBoxSideA.Visible = comboBoxFigureType.SelectedIndex == 2;
-             maskedTextBoxSideB.Visible = comboBoxFigureType.SelectedIndex == 2;
-             maskedTextBoxSideC.Visible = comboBoxFigureType.SelectedIndex == 2;
+
+            maskedTextBoxWidth.Visible = comboBoxFigureType.SelectedIndex == 0;
+            maskedTextBoxLength.Visible = comboBoxFigureType.SelectedIndex == 0;
+            maskedTextBoxRadius.Visible = comboBoxFigureType.SelectedIndex == 1;
+            maskedTextBoxSideA.Visible = comboBoxFigureType.SelectedIndex == 2;
+            maskedTextBoxSideB.Visible = comboBoxFigureType.SelectedIndex == 2;
+            maskedTextBoxSideC.Visible = comboBoxFigureType.SelectedIndex == 2;
+
         }
-         
+
         //Кнопка отмены действий      
         private void buttonCancel_Click(object sender, EventArgs e)
         {
@@ -90,7 +92,7 @@ namespace WinForms
                 Close();
             }
         }
-        
+      
         //Описание данных о фигуре
         public IFigure Figure
         {
