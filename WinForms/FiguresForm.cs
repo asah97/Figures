@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using Newtonsoft.Json;
@@ -9,13 +10,23 @@ namespace WinForms
 {
     public partial class FiguresForm : Form
     {
+        public ObjectControlBasic MainFigureControl = new ObjectControlBasic();
+
         public FiguresForm()
         {
             InitializeComponent();
+
+            MainFigureControl.ReadOnly = true;
+            MainFigureControl.Location = new Point(467, 12);
+
+            if (FiguresList.listFigures.Count != 0)
+            {
+                MainFigureControl.Figure = FiguresList.listFigures[dataGridViewFigures.SelectedCells[0].RowIndex];
+            }
         }
 
         //Сериализация Newtosoft Json
-        public  JsonSerializer serializer = new JsonSerializer()
+        public  JsonSerializer Serializer = new JsonSerializer()
         {
             TypeNameHandling = TypeNameHandling.All,
             Formatting = Formatting.Indented,
@@ -107,9 +118,11 @@ namespace WinForms
             {
                 saveFile.Filter = "Списки фигур (.goo)|*.goo";
                 using (StreamWriter sw = new StreamWriter(saveFile.FileName))
-                using (JsonWriter writer = new JsonTextWriter(sw))
                 {
-                    serializer.Serialize(writer, FiguresList.listFigures);
+                    using (JsonWriter writer = new JsonTextWriter(sw))
+                    {
+                        Serializer.Serialize(writer, FiguresList.listFigures);
+                    }
                 }
                 MessageBox.Show("Список сохранен.");
             }
@@ -120,15 +133,16 @@ namespace WinForms
             openFile.Filter = "Списки фигур (.goo)|*.goo";
             if (openFile.ShowDialog() == DialogResult.OK)
             {
-                //TODO: скобки {} после юзинг
                 using (StreamReader sr = new StreamReader(openFile.FileName))
-                using (JsonReader reader = new JsonTextReader(sr))
                 {
-                    FiguresList.listFigures = (List<IFigure>) serializer.Deserialize(reader, typeof(List<IFigure>));
-                    dataGridViewFigures.Rows.Clear();
-                    foreach (var data in FiguresList.listFigures)
+                    using (JsonReader reader = new JsonTextReader(sr))
                     {
-                        dataGridViewFigures.Rows.Add(data.GetType().Name, data.StartX, data.StartY, data.GetArea());
+                        FiguresList.listFigures = (List<IFigure>) Serializer.Deserialize(reader, typeof(List<IFigure>));
+                        dataGridViewFigures.Rows.Clear();
+                        foreach (var data in FiguresList.listFigures)
+                        {
+                            dataGridViewFigures.Rows.Add(data.GetType().Name, data.StartX, data.StartY, data.GetArea());
+                        }
                     }
                 }
             }

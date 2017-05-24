@@ -42,11 +42,11 @@
             this.ColumnSquare = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripFile = new System.Windows.Forms.ToolStripDropDownButton();
-            this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.savingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFile = new System.Windows.Forms.SaveFileDialog();
             this.openFile = new System.Windows.Forms.OpenFileDialog();
-            this.objectControl1 = new WinForms.ObjectControl();
+            this.objectControlMainForm = new WinForms.ObjectControlBasic();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFigures)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -172,27 +172,27 @@
             this.toolStripFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.toolStripFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.открытьToolStripMenuItem,
-            this.сохранитьToolStripMenuItem});
+            this.openingToolStripMenuItem,
+            this.savingToolStripMenuItem});
             this.toolStripFile.Image = ((System.Drawing.Image)(resources.GetObject("toolStripFile.Image")));
             this.toolStripFile.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripFile.Name = "toolStripFile";
             this.toolStripFile.Size = new System.Drawing.Size(49, 22);
             this.toolStripFile.Text = "Файл";
             // 
-            // открытьToolStripMenuItem
+            // openingToolStripMenuItem
             // 
-            this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.открытьToolStripMenuItem.Text = "Открыть";
-            this.открытьToolStripMenuItem.Click += new System.EventHandler(this.открытьToolStripMenuItem_Click);
+            this.openingToolStripMenuItem.Name = "openingToolStripMenuItem";
+            this.openingToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.openingToolStripMenuItem.Text = "Открыть";
+            this.openingToolStripMenuItem.Click += new System.EventHandler(this.openingToolStripMenuItem_Click);
             // 
-            // сохранитьToolStripMenuItem
+            // savingToolStripMenuItem
             // 
-            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.сохранитьToolStripMenuItem.Text = "Сохранить";
-            this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
+            this.savingToolStripMenuItem.Name = "savingToolStripMenuItem";
+            this.savingToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.savingToolStripMenuItem.Text = "Сохранить";
+            this.savingToolStripMenuItem.Click += new System.EventHandler(this.savingToolStripMenuItem_Click);
             // 
             // saveFile
             // 
@@ -202,21 +202,22 @@
             // 
             this.openFile.FileName = "Открыть список";
             // 
-            // objectControl1
+            // objectControlMainForm
             // 
-            this.objectControl1.Location = new System.Drawing.Point(466, 28);
-            this.objectControl1.Name = "objectControl1";
-            this.objectControl1.Object = null;
-            this.objectControl1.Size = new System.Drawing.Size(344, 247);
-            this.objectControl1.TabIndex = 2;
+            this.objectControlMainForm.Figure = null;
+            this.objectControlMainForm.Location = new System.Drawing.Point(467, 3);
+            this.objectControlMainForm.Name = "objectControlMainForm";
+            this.objectControlMainForm.ReadOnly = false;
+            this.objectControlMainForm.Size = new System.Drawing.Size(344, 247);
+            this.objectControlMainForm.TabIndex = 0;
             // 
             // FiguresForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(782, 254);
-            this.Controls.Add(this.objectControl1);
+            this.ClientSize = new System.Drawing.Size(821, 262);
+            this.Controls.Add(this.objectControlMainForm);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -246,12 +247,12 @@
         private System.Windows.Forms.TextBox textBoxSearchType;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripFile;
-        private System.Windows.Forms.ToolStripMenuItem открытьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem savingToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SaveFileDialog saveFile;
         private System.Windows.Forms.OpenFileDialog openFile;
-        private ObjectControl objectControl1;
+        private ObjectControlBasic objectControlMainForm;
     }
 }
 
