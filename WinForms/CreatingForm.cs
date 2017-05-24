@@ -16,6 +16,8 @@ namespace WinForms
         private bool _maskedSideB = false;
         private bool _maskedSideC = false;
 
+        private IFigure _figure;
+
         public CreatingForm()
         {
             InitializeComponent();
@@ -29,41 +31,12 @@ namespace WinForms
         //нужные textbox'ы
         private void comboBoxFigures_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (comboBoxFigureType.SelectedIndex)
-            {
-                case 0:
-                    {
-                        maskedTextBoxWidth.Visible = true;
-                        maskedTextBoxLength.Visible = true;
-                        maskedTextBoxRadius.Visible = false;
-                        maskedTextBoxSideA.Visible = false;
-                        maskedTextBoxSideB.Visible = false;
-                        maskedTextBoxSideC.Visible = false;
-                        break;
-                    }
-                case 1:
-                    {
-                        maskedTextBoxWidth.Visible = false;
-                        maskedTextBoxLength.Visible = false;
-                        maskedTextBoxRadius.Visible = true;
-                        maskedTextBoxSideA.Visible = false;
-                        maskedTextBoxSideB.Visible = false;
-                        maskedTextBoxSideC.Visible = false;
-                       
-                        break;
-                    }
-                case 2:
-                    {
-                        maskedTextBoxWidth.Visible = false;
-                        maskedTextBoxLength.Visible = false;
-                        maskedTextBoxRadius.Visible = false;
-                        maskedTextBoxSideA.Visible = true;
-                        maskedTextBoxSideB.Visible = true;
-                        maskedTextBoxSideC.Visible = true;
-                        break;
-                    }
-            }
-
+             maskedTextBoxWidth.Visible = comboBoxFigureType.SelectedIndex == 0;
+             maskedTextBoxLength.Visible = comboBoxFigureType.SelectedIndex == 0;
+             maskedTextBoxRadius.Visible = comboBoxFigureType.SelectedIndex == 1;
+             maskedTextBoxSideA.Visible = comboBoxFigureType.SelectedIndex == 2;
+             maskedTextBoxSideB.Visible = comboBoxFigureType.SelectedIndex == 2;
+             maskedTextBoxSideC.Visible = comboBoxFigureType.SelectedIndex == 2;
         }
          
         //Кнопка отмены действий      
@@ -117,9 +90,7 @@ namespace WinForms
                 Close();
             }
         }
-
-        private IFigure _figure;
-
+        
         //Описание данных о фигуре
         public IFigure Figure
         {
