@@ -7,7 +7,6 @@ namespace WinForms
 {
     public partial class ObjectForm : Form
     {
-        //TODO: Настроить свойство Anchor для формы
         private ObjectControlBasic EditingFigureControl = new ObjectControlBasic();
 
         public IFigure EditingFigure;
@@ -56,11 +55,9 @@ namespace WinForms
         {
             Random random = new Random();
             int figureName = random.Next(3);
+
             EditingFigureControl.FigureRandomName(figureName);
-
-            //EditingFigure.StartX = Convert.ToDouble(1.111 + random.NextDouble() * (999.999 - 1.111));
-            //EditingFigure.StartY = Convert.ToDouble(1.111 + random.NextDouble() * (999.999 - 1.111));
-
+            
             if (figureName == 1)
             {
                 var rectangle = new Figures.Rectangle();
