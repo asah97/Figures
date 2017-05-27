@@ -46,7 +46,7 @@
             this.savingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFile = new System.Windows.Forms.SaveFileDialog();
             this.openFile = new System.Windows.Forms.OpenFileDialog();
-            this.objectControlMainForm = new WinForms.ObjectControlBasic();
+            this.groupBoxData = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFigures)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -202,24 +202,24 @@
             // 
             this.openFile.FileName = "Открыть список";
             // 
-            // objectControlMainForm
+            // groupBoxData
             // 
-            this.objectControlMainForm.Figure = null;
-            this.objectControlMainForm.Location = new System.Drawing.Point(467, 3);
-            this.objectControlMainForm.Name = "objectControlMainForm";
-            this.objectControlMainForm.ReadOnly = false;
-            this.objectControlMainForm.Size = new System.Drawing.Size(344, 247);
-            this.objectControlMainForm.TabIndex = 0;
+            this.groupBoxData.Location = new System.Drawing.Point(473, 3);
+            this.groupBoxData.Name = "groupBoxData";
+            this.groupBoxData.Size = new System.Drawing.Size(357, 268);
+            this.groupBoxData.TabIndex = 2;
+            this.groupBoxData.TabStop = false;
+            this.groupBoxData.Text = "Figure Data";
             // 
             // FiguresForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(821, 262);
-            this.Controls.Add(this.objectControlMainForm);
+            this.ClientSize = new System.Drawing.Size(842, 283);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxData);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FiguresForm";
             this.Text = "FiguresForm";
@@ -252,7 +252,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SaveFileDialog saveFile;
         private System.Windows.Forms.OpenFileDialog openFile;
-        private ObjectControlBasic objectControlMainForm;
+        private System.Windows.Forms.GroupBox groupBoxData;
     }
 }
 

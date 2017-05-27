@@ -10,54 +10,64 @@ namespace WinForms
 {
     public partial class FiguresForm : Form
     {
-        public ObjectControlBasic MainFigureControl = new ObjectControlBasic();
+        private ObjectControlBasic mainFigureControl = new ObjectControlBasic();
 
         public FiguresForm()
         {
             InitializeComponent();
 
-            MainFigureControl.ReadOnly = true;
-            MainFigureControl.Location = new Point(467, 12);
-
+            mainFigureControl.Parent = groupBoxData;
+            mainFigureControl.Location = new System.Drawing.Point(7, 15);
+            mainFigureControl.ReadOnly = true;
+            mainFigureControl.Size = new System.Drawing.Size(344, 247);
+            
             if (FiguresList.listFigures.Count != 0)
             {
-                MainFigureControl.Figure = FiguresList.listFigures[dataGridViewFigures.SelectedCells[0].RowIndex];
+                mainFigureControl.Figure = FiguresList.listFigures[dataGridViewFigures.SelectedCells[0].RowIndex];
             }
         }
 
         //Сериализация Newtosoft Json
-        public  JsonSerializer Serializer = new JsonSerializer()
-        {
-            TypeNameHandling = TypeNameHandling.All,
-            Formatting = Formatting.Indented,
-            NullValueHandling = NullValueHandling.Include
-        };
+        //public JsonSerializer Serializer = new JsonSerializer()
+        //{
+        //    TypeNameHandling = TypeNameHandling.All,
+        //    Formatting = Formatting.Indented,
+        //    NullValueHandling = NullValueHandling.Include
+        //};
 
         //Кнопка добавления строки с данными о фигуре в список через форму создания фигуры
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            CreatingForm formAdd = new CreatingForm();
+            ObjectForm formAdd = new ObjectForm();
+            formAdd.ShowDialog();
 
-            if (formAdd.ShowDialog() == DialogResult.OK)
+            var figure = formAdd.EditingFigure;
+            if (figure == null)
             {
-                var figure = formAdd.Figure;
-                this.dataGridViewFigures.Rows.Add(figure.GetType().Name, figure.StartX, figure.StartY,
-                    figure.GetArea());
-                FiguresList.listFigures.Add(figure);
+                return;
             }
-
+            dataGridViewFigures.Rows.Add(figure.GetType().Name, figure.StartX, figure.StartY, figure.GetArea());
+            FiguresList.listFigures.Add(figure);
+            mainFigureControl.Figure = FiguresList.listFigures[dataGridViewFigures.SelectedCells[0].RowIndex];
+            //mainFigureControl.Figure = FiguresList.listFigures[dataGridViewFigures.;
         }
 
         //Кнопка удаления строки из списка 
         private void buttonRemove_Click(object sender, EventArgs e)
         {
             int removeIndex = dataGridViewFigures.CurrentCell.RowIndex;
+
             if (dataGridViewFigures.Rows.Count == 0)
             {
                 MessageBox.Show("Список пуст!");
             }
-            dataGridViewFigures.Rows.RemoveAt(removeIndex);
-            FiguresList.listFigures.RemoveAt(removeIndex);
+            else
+            {
+                dataGridViewFigures.Rows.RemoveAt(removeIndex);
+                FiguresList.listFigures.RemoveAt(removeIndex);
+                mainFigureControl.Figure = null;
+                
+            }
         }
 
         //Кнопка изменения данных в строке списка через форму создания фигуры
@@ -69,13 +79,14 @@ namespace WinForms
             }
             else
             {
-                CreatingForm formMod = new CreatingForm();
+                ObjectForm formMod = new ObjectForm();
+                formMod.ShowDialog();
                 int modIndex = dataGridViewFigures.CurrentCell.RowIndex;
-                formMod.Figure = FiguresList.listFigures[modIndex];
+                formMod.EditingFigure = FiguresList.listFigures[modIndex];
 
                 if (formMod.ShowDialog() == DialogResult.OK)
                 {
-                    var newFigure = formMod.Figure;
+                    var newFigure = formMod.EditingFigure;
                     FiguresList.listFigures.Insert(dataGridViewFigures.SelectedCells[0].RowIndex, newFigure);
                     FiguresList.listFigures.RemoveAt(dataGridViewFigures.SelectedCells[0].RowIndex + 1);
                     dataGridViewFigures.Rows.Clear();
@@ -107,9 +118,10 @@ namespace WinForms
         }
 
         //Сериализация (сохранение) списка
-       
-        private void savingToolStripMenuItem_Click(object sender, EventArgs e)
+       private void savingToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Serialization serial = new Serialization();
+            JsonSerializer ser = serial.SerialAccess;
             if (FiguresList.listFigures.Count == 0)
             {
                 MessageBox.Show("Список фигур пуст.");
@@ -121,7 +133,7 @@ namespace WinForms
                 {
                     using (JsonWriter writer = new JsonTextWriter(sw))
                     {
-                        Serializer.Serialize(writer, FiguresList.listFigures);
+                        ser.Serialize(writer, FiguresList.listFigures);
                     }
                 }
                 MessageBox.Show("Список сохранен.");
@@ -130,22 +142,22 @@ namespace WinForms
 
         private void openingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openFile.Filter = "Списки фигур (.goo)|*.goo";
-            if (openFile.ShowDialog() == DialogResult.OK)
-            {
-                using (StreamReader sr = new StreamReader(openFile.FileName))
-                {
-                    using (JsonReader reader = new JsonTextReader(sr))
-                    {
-                        FiguresList.listFigures = (List<IFigure>) Serializer.Deserialize(reader, typeof(List<IFigure>));
-                        dataGridViewFigures.Rows.Clear();
-                        foreach (var data in FiguresList.listFigures)
-                        {
-                            dataGridViewFigures.Rows.Add(data.GetType().Name, data.StartX, data.StartY, data.GetArea());
-                        }
-                    }
-                }
-            }
+            //openFile.Filter = "Списки фигур (.goo)|*.goo";
+            //if (openFile.ShowDialog() == DialogResult.OK)
+            //{
+            //    using (StreamReader sr = new StreamReader(openFile.FileName))
+            //    {
+            //        using (JsonReader reader = new JsonTextReader(sr))
+            //        {
+            //            FiguresList.listFigures = (List<IFigure>)Serializer.Deserialize(reader, typeof(List<IFigure>));
+            //            dataGridViewFigures.Rows.Clear();
+            //            foreach (var data in FiguresList.listFigures)
+            //            {
+            //                dataGridViewFigures.Rows.Add(data.GetType().Name, data.StartX, data.StartY, data.GetArea());
+            //            }
+            //        }
+            //    }
+            //}
         }
 
     }
