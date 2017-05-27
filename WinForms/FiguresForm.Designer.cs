@@ -54,6 +54,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBoxSearchType);
             this.groupBox1.Controls.Add(this.buttonModify);
@@ -69,6 +71,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.Location = new System.Drawing.Point(249, 180);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 13);
@@ -77,6 +80,7 @@
             // 
             // textBoxSearchType
             // 
+            this.textBoxSearchType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxSearchType.Location = new System.Drawing.Point(351, 177);
             this.textBoxSearchType.Name = "textBoxSearchType";
             this.textBoxSearchType.Size = new System.Drawing.Size(100, 20);
@@ -120,6 +124,8 @@
             // 
             this.dataGridViewFigures.AllowUserToAddRows = false;
             this.dataGridViewFigures.AllowUserToDeleteRows = false;
+            this.dataGridViewFigures.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridViewFigures.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewFigures.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FigureType,
@@ -131,6 +137,7 @@
             this.dataGridViewFigures.ReadOnly = true;
             this.dataGridViewFigures.Size = new System.Drawing.Size(446, 149);
             this.dataGridViewFigures.TabIndex = 0;
+            this.dataGridViewFigures.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewFigures_CellClick);
             // 
             // FigureType
             // 
@@ -183,14 +190,14 @@
             // openingToolStripMenuItem
             // 
             this.openingToolStripMenuItem.Name = "openingToolStripMenuItem";
-            this.openingToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.openingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openingToolStripMenuItem.Text = "Открыть";
             this.openingToolStripMenuItem.Click += new System.EventHandler(this.openingToolStripMenuItem_Click);
             // 
             // savingToolStripMenuItem
             // 
             this.savingToolStripMenuItem.Name = "savingToolStripMenuItem";
-            this.savingToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.savingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.savingToolStripMenuItem.Text = "Сохранить";
             this.savingToolStripMenuItem.Click += new System.EventHandler(this.savingToolStripMenuItem_Click);
             // 
@@ -204,6 +211,9 @@
             // 
             // groupBoxData
             // 
+            this.groupBoxData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxData.Location = new System.Drawing.Point(473, 3);
             this.groupBoxData.Name = "groupBoxData";
             this.groupBoxData.Size = new System.Drawing.Size(357, 268);
