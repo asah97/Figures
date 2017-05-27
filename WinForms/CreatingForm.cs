@@ -92,8 +92,8 @@ namespace WinForms
                 Close();
             }
         }
-      
-        //Описание данных о фигуре
+
+       //Описание данных о фигуре
         public IFigure Figure
         {
             get
@@ -129,7 +129,7 @@ namespace WinForms
                 }
                 return _figure;
             }
-            
+
             set
             {
                 _figure = value;
@@ -137,9 +137,9 @@ namespace WinForms
                 maskedTextBoxY.Text = Convert.ToString(value.StartY);
                 if (value is Figures.Rectangle)
                 {
-                    var Rect = (Figures.Rectangle) value;
+                    var Rect = (Figures.Rectangle)value;
                     comboBoxFigureType.SelectedIndex = 0;
-                                       
+
                     maskedTextBoxWidth.Text = Convert.ToString(Rect.Width);
                     maskedTextBoxLength.Text = Convert.ToString(Rect.Length);
                 }
@@ -147,14 +147,14 @@ namespace WinForms
                 {
                     var Round = (Figures.Circle)value;
                     comboBoxFigureType.SelectedIndex = 1;
-                                        
+
                     maskedTextBoxRadius.Text = Convert.ToString(Round.Radius);
                 }
                 else if (value is Figures.Triangle)
                 {
                     var Trigon = (Figures.Triangle)value;
                     comboBoxFigureType.SelectedIndex = 2;
-                                        
+
                     maskedTextBoxSideA.Text = Convert.ToString(Trigon.SideA);
                     maskedTextBoxSideB.Text = Convert.ToString(Trigon.SideB);
                     maskedTextBoxSideC.Text = Convert.ToString(Trigon.SideC);
@@ -165,12 +165,12 @@ namespace WinForms
         //Кнопка подсчета площади фигуры
         private void buttonCountSquare_Click(object sender, EventArgs e)
         {
-            if ((_maskedWidth && _maskedLength) || (_maskedRadius) || (_maskedSideA && _maskedSideB & _maskedSideC))
-            {
-                textBoxSquare.Text = Convert.ToString(Figure.GetArea());
-            }
-            else
-                MessageBox.Show("Не все величины были введены");
+            //if ((_maskedWidth && _maskedLength) || (_maskedRadius) || (_maskedSideA && _maskedSideB & _maskedSideC))
+            //{
+            //    textBoxSquare.Text = Convert.ToString(Figure.GetArea());
+            //}
+            //else
+            //    MessageBox.Show("Не все величины были введены");
             
         }
                 

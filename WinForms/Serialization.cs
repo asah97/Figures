@@ -1,11 +1,4 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-//using System.Windows.Forms;
-//using Figures;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace WinForms
 {
@@ -23,7 +16,5 @@ namespace WinForms
             get { return _serializer; }
             set { _serializer = value; }
         }
-        
-        
     }
 }

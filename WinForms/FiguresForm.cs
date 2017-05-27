@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using Newtonsoft.Json;
@@ -10,6 +9,7 @@ namespace WinForms
 {
     public partial class FiguresForm : Form
     {
+        //TODO: Настроить свойство Anchor для формы
         private ObjectControlBasic mainFigureControl = new ObjectControlBasic();
 
         public FiguresForm()
@@ -27,15 +27,6 @@ namespace WinForms
             }
         }
 
-        //Сериализация Newtosoft Json
-        //public JsonSerializer Serializer = new JsonSerializer()
-        //{
-        //    TypeNameHandling = TypeNameHandling.All,
-        //    Formatting = Formatting.Indented,
-        //    NullValueHandling = NullValueHandling.Include
-        //};
-
-        //Кнопка добавления строки с данными о фигуре в список через форму создания фигуры
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             ObjectForm formAdd = new ObjectForm();
@@ -49,24 +40,21 @@ namespace WinForms
             dataGridViewFigures.Rows.Add(figure.GetType().Name, figure.StartX, figure.StartY, figure.GetArea());
             FiguresList.listFigures.Add(figure);
             mainFigureControl.Figure = FiguresList.listFigures[dataGridViewFigures.SelectedCells[0].RowIndex];
-            //mainFigureControl.Figure = FiguresList.listFigures[dataGridViewFigures.;
         }
 
         //Кнопка удаления строки из списка 
         private void buttonRemove_Click(object sender, EventArgs e)
         {
-            int removeIndex = dataGridViewFigures.CurrentCell.RowIndex;
-
             if (dataGridViewFigures.Rows.Count == 0)
             {
                 MessageBox.Show("Список пуст!");
             }
             else
             {
+                int removeIndex = dataGridViewFigures.CurrentCell.RowIndex;
                 dataGridViewFigures.Rows.RemoveAt(removeIndex);
                 FiguresList.listFigures.RemoveAt(removeIndex);
-                mainFigureControl.Figure = null;
-                
+                mainFigureControl.Clear();;
             }
         }
 
@@ -79,23 +67,24 @@ namespace WinForms
             }
             else
             {
-                ObjectForm formMod = new ObjectForm();
-                formMod.ShowDialog();
                 int modIndex = dataGridViewFigures.CurrentCell.RowIndex;
-                formMod.EditingFigure = FiguresList.listFigures[modIndex];
 
-                if (formMod.ShowDialog() == DialogResult.OK)
+                ObjectForm formMod = new ObjectForm(modIndex);
+                formMod.EditingFigure = FiguresList.listFigures[modIndex];
+                formMod.ShowDialog();
+                var newFigure = formMod.EditingFigure;
+                if (formMod.EditingFigure == null)
                 {
-                    var newFigure = formMod.EditingFigure;
-                    FiguresList.listFigures.Insert(dataGridViewFigures.SelectedCells[0].RowIndex, newFigure);
-                    FiguresList.listFigures.RemoveAt(dataGridViewFigures.SelectedCells[0].RowIndex + 1);
-                    dataGridViewFigures.Rows.Clear();
-                    foreach (var data in FiguresList.listFigures)
-                    {
-                        dataGridViewFigures.Rows.Add(data.GetType().Name, data.StartX, data.StartY, data.GetArea());
-                    }
+                    return;
                 }
-            }
+                FiguresList.listFigures.Insert(dataGridViewFigures.SelectedCells[0].RowIndex, newFigure);
+                FiguresList.listFigures.RemoveAt(dataGridViewFigures.SelectedCells[0].RowIndex + 1);
+                dataGridViewFigures.Rows.Clear();
+                foreach (var data in FiguresList.listFigures)
+                {
+                    dataGridViewFigures.Rows.Add(data.GetType().Name, data.StartX, data.StartY, data.GetArea());
+                }
+             }
         }
 
         //Поиск данных по названию фигуры     
@@ -142,22 +131,25 @@ namespace WinForms
 
         private void openingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //openFile.Filter = "Списки фигур (.goo)|*.goo";
-            //if (openFile.ShowDialog() == DialogResult.OK)
-            //{
-            //    using (StreamReader sr = new StreamReader(openFile.FileName))
-            //    {
-            //        using (JsonReader reader = new JsonTextReader(sr))
-            //        {
-            //            FiguresList.listFigures = (List<IFigure>)Serializer.Deserialize(reader, typeof(List<IFigure>));
-            //            dataGridViewFigures.Rows.Clear();
-            //            foreach (var data in FiguresList.listFigures)
-            //            {
-            //                dataGridViewFigures.Rows.Add(data.GetType().Name, data.StartX, data.StartY, data.GetArea());
-            //            }
-            //        }
-            //    }
-            //}
+            Serialization serial = new Serialization();
+            JsonSerializer ser = serial.SerialAccess;
+
+            openFile.Filter = "Списки фигур (.goo)|*.goo";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamReader sr = new StreamReader(openFile.FileName))
+                {
+                    using (JsonReader reader = new JsonTextReader(sr))
+                    {
+                        FiguresList.listFigures = (List<IFigure>)ser.Deserialize(reader, typeof(List<IFigure>));
+                        dataGridViewFigures.Rows.Clear();
+                        foreach (var data in FiguresList.listFigures)
+                        {
+                            dataGridViewFigures.Rows.Add(data.GetType().Name, data.StartX, data.StartY, data.GetArea());
+                        }
+                    }
+                }
+            }
         }
 
     }

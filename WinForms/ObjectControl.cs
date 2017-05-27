@@ -1,11 +1,4 @@
 ﻿using System;
-//using System.Collections.Generic;
-//using System.ComponentModel;
-//using System.Drawing;
-//using System.Data;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
 using System.Windows.Forms;
 using Figures;
 
@@ -14,19 +7,41 @@ namespace WinForms
     public partial class ObjectControlBasic : UserControl
     {
         private bool _readOnly;
+        private bool _closeCondition;
         private IFigure _object;
-        private void buttonSquare_Click(object sender, EventArgs e)
-        {
-            textBoxSquare.Text = Convert.ToString(Figure.GetArea());
-        }
 
         public ObjectControlBasic()
         {
             InitializeComponent();
         }
 
-    
-        //private bool _empty;
+        public bool CloseCondition()
+        {
+            _closeCondition = false;
+            if (maskedTextBoxX.Text == "   ," && maskedTextBoxY.Text == "   ,")
+            {
+                MessageBox.Show("Не были введены начальные координаты фигуры!");
+                return _closeCondition;
+            }
+            if (comboBoxFigure.SelectedIndex == 1 && (maskedTextBoxLength.Text == "  ," || maskedTextBoxWidth.Text == "  ,"))
+            {
+                MessageBox.Show("Не были введены длина и (или) ширина прямоугольника!");
+                return _closeCondition;
+            }
+            if (comboBoxFigure.SelectedIndex == 0 && maskedTextBoxRadius.Text == "  ,")
+            {
+                MessageBox.Show("Не был введен радиус");
+                return _closeCondition;
+            }
+            if (comboBoxFigure.SelectedIndex == 2 && (maskedTextBoxSideA.Text == "  ," ||
+                                                      maskedTextBoxSideB.Text == "  ," ||
+                                                      maskedTextBoxSideC.Text == "  ,"))
+            {
+                MessageBox.Show("Не все стороны треугольника были инициализированы!");
+                return _closeCondition;
+            }
+            return _closeCondition = true;
+        }
        
         public IFigure Figure
         {
@@ -109,6 +124,7 @@ namespace WinForms
                 _readOnly = value;
                 if (_readOnly)
                 {
+                    comboBoxFigure.Enabled = false;
                     maskedTextBoxX.ReadOnly = true;
                     maskedTextBoxY.ReadOnly = true;
                     maskedTextBoxLength.ReadOnly = true;
@@ -121,6 +137,7 @@ namespace WinForms
                 }
                 else
                 {
+                    comboBoxFigure.Enabled = true;
                     maskedTextBoxX.ReadOnly = false;
                     maskedTextBoxY.ReadOnly = false;
                     maskedTextBoxLength.ReadOnly = false;
@@ -134,13 +151,38 @@ namespace WinForms
             }
         }
 
-        //public bool EmptyCheck()
-        //{
-        //    return _readOnly;
-        //    //if (maskedTextBoxX.Text = "")
-        //}
+        public void FigureRandomName(int random)
+        {
+            if (random == 0)
+                comboBoxFigure.SelectedIndex = 0;
+            if (random == 1)
+                comboBoxFigure.SelectedIndex = 1;
+            if (random == 2)
+                comboBoxFigure.SelectedIndex = 2;
+        }
 
-         
+        public void Clear()
+        {
+            if (ReadOnly)
+            {
+                comboBoxFigure.SelectedIndex = -1;
+                maskedTextBoxX.Text = "";
+                maskedTextBoxY.Text = "";
+                maskedTextBoxWidth.Text = "";
+                maskedTextBoxLength.Text = "";
+                maskedTextBoxRadius.Text = "";
+                maskedTextBoxSideA.Text = "";
+                maskedTextBoxSideB.Text = "";
+                maskedTextBoxSideC.Text = "";
+                textBoxSquare.Text = "";
+            }
+        }
+        //TODO: Не считать площадь при неправильном создании треугольника
+        private void buttonSquare_Click(object sender, EventArgs e)
+        {
+            textBoxSquare.Text = Convert.ToString(Figure.GetArea());
+        }
+
         private void comboBoxFigure_SelectedIndexChanged(object sender, EventArgs e)
         {
             maskedTextBoxRadius.Visible = comboBoxFigure.SelectedIndex == 0;

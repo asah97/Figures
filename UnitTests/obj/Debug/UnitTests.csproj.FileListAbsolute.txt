@@ -7,3 +7,11 @@ C:\Users\andreygolubkow\Source\Repos\Figures\UnitTests\bin\Debug\Model.pdb
 C:\Users\andreygolubkow\Source\Repos\Figures\UnitTests\bin\Debug\nunit.framework.xml
 C:\Users\andreygolubkow\Source\Repos\Figures\UnitTests\obj\Debug\UnitTests.dll
 C:\Users\andreygolubkow\Source\Repos\Figures\UnitTests\obj\Debug\UnitTests.pdb
+F:\Program Files (x86)\Git\Figures\UnitTests\bin\Debug\UnitTests.dll
+F:\Program Files (x86)\Git\Figures\UnitTests\bin\Debug\UnitTests.pdb
+F:\Program Files (x86)\Git\Figures\UnitTests\bin\Debug\Model.dll
+F:\Program Files (x86)\Git\Figures\UnitTests\bin\Debug\nunit.framework.dll
+F:\Program Files (x86)\Git\Figures\UnitTests\bin\Debug\Model.pdb
+F:\Program Files (x86)\Git\Figures\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+F:\Program Files (x86)\Git\Figures\UnitTests\obj\Debug\UnitTests.dll
+F:\Program Files (x86)\Git\Figures\UnitTests\obj\Debug\UnitTests.pdb

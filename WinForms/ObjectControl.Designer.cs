@@ -60,7 +60,7 @@
             this.groupBoxCoordinates.Controls.Add(this.label1);
             this.groupBoxCoordinates.Controls.Add(this.maskedTextBoxY);
             this.groupBoxCoordinates.Controls.Add(this.maskedTextBoxX);
-            this.groupBoxCoordinates.Location = new System.Drawing.Point(15, 3);
+            this.groupBoxCoordinates.Location = new System.Drawing.Point(3, 3);
             this.groupBoxCoordinates.Name = "groupBoxCoordinates";
             this.groupBoxCoordinates.Size = new System.Drawing.Size(161, 79);
             this.groupBoxCoordinates.TabIndex = 0;
@@ -109,7 +109,7 @@
             "Circle",
             "Rectangle",
             "Triangle"});
-            this.comboBoxFigure.Location = new System.Drawing.Point(194, 22);
+            this.comboBoxFigure.Location = new System.Drawing.Point(182, 3);
             this.comboBoxFigure.Name = "comboBoxFigure";
             this.comboBoxFigure.Size = new System.Drawing.Size(121, 21);
             this.comboBoxFigure.TabIndex = 1;
@@ -129,7 +129,7 @@
             this.groupBoxSquareData.Controls.Add(this.maskedTextBoxRadius);
             this.groupBoxSquareData.Controls.Add(this.maskedTextBoxLength);
             this.groupBoxSquareData.Controls.Add(this.maskedTextBoxWidth);
-            this.groupBoxSquareData.Location = new System.Drawing.Point(15, 88);
+            this.groupBoxSquareData.Location = new System.Drawing.Point(3, 86);
             this.groupBoxSquareData.Name = "groupBoxSquareData";
             this.groupBoxSquareData.Size = new System.Drawing.Size(300, 102);
             this.groupBoxSquareData.TabIndex = 2;
@@ -240,7 +240,7 @@
             // 
             // textBoxSquare
             // 
-            this.textBoxSquare.Location = new System.Drawing.Point(206, 197);
+            this.textBoxSquare.Location = new System.Drawing.Point(203, 192);
             this.textBoxSquare.Name = "textBoxSquare";
             this.textBoxSquare.ReadOnly = true;
             this.textBoxSquare.Size = new System.Drawing.Size(100, 20);
@@ -249,7 +249,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(162, 200);
+            this.label9.Location = new System.Drawing.Point(153, 199);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(41, 13);
             this.label9.TabIndex = 4;
@@ -257,7 +257,7 @@
             // 
             // buttonSquare
             // 
-            this.buttonSquare.Location = new System.Drawing.Point(15, 194);
+            this.buttonSquare.Location = new System.Drawing.Point(3, 190);
             this.buttonSquare.Name = "buttonSquare";
             this.buttonSquare.Size = new System.Drawing.Size(78, 23);
             this.buttonSquare.TabIndex = 5;
@@ -276,7 +276,7 @@
             this.Controls.Add(this.comboBoxFigure);
             this.Controls.Add(this.groupBoxCoordinates);
             this.Name = "ObjectControlBasic";
-            this.Size = new System.Drawing.Size(344, 247);
+            this.Size = new System.Drawing.Size(310, 225);
             this.groupBoxCoordinates.ResumeLayout(false);
             this.groupBoxCoordinates.PerformLayout();
             this.groupBoxSquareData.ResumeLayout(false);
