@@ -49,7 +49,6 @@
             this.maskedTextBoxWidth = new System.Windows.Forms.MaskedTextBox();
             this.textBoxSquare = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.buttonSquare = new System.Windows.Forms.Button();
             this.groupBoxCoordinates.SuspendLayout();
             this.groupBoxSquareData.SuspendLayout();
             this.SuspendLayout();
@@ -88,7 +87,7 @@
             // maskedTextBoxY
             // 
             this.maskedTextBoxY.Location = new System.Drawing.Point(43, 47);
-            this.maskedTextBoxY.Mask = "#00.000";
+            this.maskedTextBoxY.Mask = "#09.009";
             this.maskedTextBoxY.Name = "maskedTextBoxY";
             this.maskedTextBoxY.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxY.TabIndex = 1;
@@ -96,8 +95,10 @@
             // maskedTextBoxX
             // 
             this.maskedTextBoxX.Location = new System.Drawing.Point(43, 21);
-            this.maskedTextBoxX.Mask = "#00.000";
+            this.maskedTextBoxX.Mask = "#90.009";
             this.maskedTextBoxX.Name = "maskedTextBoxX";
+            this.maskedTextBoxX.ResetOnPrompt = false;
+            this.maskedTextBoxX.ResetOnSpace = false;
             this.maskedTextBoxX.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxX.TabIndex = 0;
             // 
@@ -109,7 +110,7 @@
             "Circle",
             "Rectangle",
             "Triangle"});
-            this.comboBoxFigure.Location = new System.Drawing.Point(182, 3);
+            this.comboBoxFigure.Location = new System.Drawing.Point(186, 3);
             this.comboBoxFigure.Name = "comboBoxFigure";
             this.comboBoxFigure.Size = new System.Drawing.Size(121, 21);
             this.comboBoxFigure.TabIndex = 1;
@@ -193,7 +194,7 @@
             // maskedTextBoxSideC
             // 
             this.maskedTextBoxSideC.Location = new System.Drawing.Point(191, 73);
-            this.maskedTextBoxSideC.Mask = "00.000";
+            this.maskedTextBoxSideC.Mask = "09.009";
             this.maskedTextBoxSideC.Name = "maskedTextBoxSideC";
             this.maskedTextBoxSideC.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxSideC.TabIndex = 5;
@@ -201,7 +202,7 @@
             // maskedTextBoxSideB
             // 
             this.maskedTextBoxSideB.Location = new System.Drawing.Point(191, 46);
-            this.maskedTextBoxSideB.Mask = "00.000";
+            this.maskedTextBoxSideB.Mask = "09.009";
             this.maskedTextBoxSideB.Name = "maskedTextBoxSideB";
             this.maskedTextBoxSideB.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxSideB.TabIndex = 4;
@@ -209,7 +210,7 @@
             // maskedTextBoxSideA
             // 
             this.maskedTextBoxSideA.Location = new System.Drawing.Point(191, 19);
-            this.maskedTextBoxSideA.Mask = "00.000";
+            this.maskedTextBoxSideA.Mask = "09.009";
             this.maskedTextBoxSideA.Name = "maskedTextBoxSideA";
             this.maskedTextBoxSideA.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxSideA.TabIndex = 3;
@@ -217,7 +218,7 @@
             // maskedTextBoxRadius
             // 
             this.maskedTextBoxRadius.Location = new System.Drawing.Point(43, 73);
-            this.maskedTextBoxRadius.Mask = "00.000";
+            this.maskedTextBoxRadius.Mask = "09.009";
             this.maskedTextBoxRadius.Name = "maskedTextBoxRadius";
             this.maskedTextBoxRadius.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxRadius.TabIndex = 2;
@@ -225,7 +226,7 @@
             // maskedTextBoxLength
             // 
             this.maskedTextBoxLength.Location = new System.Drawing.Point(43, 46);
-            this.maskedTextBoxLength.Mask = "00.000";
+            this.maskedTextBoxLength.Mask = "09.009";
             this.maskedTextBoxLength.Name = "maskedTextBoxLength";
             this.maskedTextBoxLength.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxLength.TabIndex = 1;
@@ -233,14 +234,14 @@
             // maskedTextBoxWidth
             // 
             this.maskedTextBoxWidth.Location = new System.Drawing.Point(43, 19);
-            this.maskedTextBoxWidth.Mask = "00.000";
+            this.maskedTextBoxWidth.Mask = "09.009";
             this.maskedTextBoxWidth.Name = "maskedTextBoxWidth";
             this.maskedTextBoxWidth.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxWidth.TabIndex = 0;
             // 
             // textBoxSquare
             // 
-            this.textBoxSquare.Location = new System.Drawing.Point(203, 192);
+            this.textBoxSquare.Location = new System.Drawing.Point(194, 192);
             this.textBoxSquare.Name = "textBoxSquare";
             this.textBoxSquare.ReadOnly = true;
             this.textBoxSquare.Size = new System.Drawing.Size(100, 20);
@@ -249,27 +250,16 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(153, 199);
+            this.label9.Location = new System.Drawing.Point(149, 195);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(41, 13);
             this.label9.TabIndex = 4;
             this.label9.Text = "Square";
             // 
-            // buttonSquare
-            // 
-            this.buttonSquare.Location = new System.Drawing.Point(3, 190);
-            this.buttonSquare.Name = "buttonSquare";
-            this.buttonSquare.Size = new System.Drawing.Size(78, 23);
-            this.buttonSquare.TabIndex = 5;
-            this.buttonSquare.Text = "Count square";
-            this.buttonSquare.UseVisualStyleBackColor = true;
-            this.buttonSquare.Click += new System.EventHandler(this.buttonSquare_Click);
-            // 
             // ObjectControlBasic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.buttonSquare);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBoxSquare);
             this.Controls.Add(this.groupBoxSquareData);
@@ -309,6 +299,5 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBoxWidth;
         private System.Windows.Forms.TextBox textBoxSquare;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button buttonSquare;
     }
 }

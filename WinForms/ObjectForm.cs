@@ -86,5 +86,23 @@ namespace WinForms
                 EditingFigureControl.Figure = triangle;
             }
         }
+
+        private void buttonSquare_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EditingFigure = EditingFigureControl.Figure;
+                EditingFigure.GetArea();
+                EditingFigureControl.Figure = EditingFigure;
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("Возможно, данные сторон геометрической фигуры не соответствуют правилам построе ");
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Не были введены параметры фигуры");
+            } 
+        }
     }
 }

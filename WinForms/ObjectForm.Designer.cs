@@ -32,6 +32,8 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonRandom = new System.Windows.Forms.Button();
             this.groupBoxEditing = new System.Windows.Forms.GroupBox();
+            this.buttonSquare = new System.Windows.Forms.Button();
+            this.groupBoxEditing.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonOk
@@ -59,7 +61,7 @@
             // buttonRandom
             // 
             this.buttonRandom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonRandom.Location = new System.Drawing.Point(12, 247);
+            this.buttonRandom.Location = new System.Drawing.Point(18, 247);
             this.buttonRandom.Name = "buttonRandom";
             this.buttonRandom.Size = new System.Drawing.Size(84, 23);
             this.buttonRandom.TabIndex = 12;
@@ -73,12 +75,23 @@
             this.groupBoxEditing.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxEditing.Controls.Add(this.buttonSquare);
             this.groupBoxEditing.Location = new System.Drawing.Point(12, 3);
             this.groupBoxEditing.Name = "groupBoxEditing";
             this.groupBoxEditing.Size = new System.Drawing.Size(327, 238);
             this.groupBoxEditing.TabIndex = 13;
             this.groupBoxEditing.TabStop = false;
             this.groupBoxEditing.Text = "FigureEditing";
+            // 
+            // buttonSquare
+            // 
+            this.buttonSquare.Location = new System.Drawing.Point(6, 209);
+            this.buttonSquare.Name = "buttonSquare";
+            this.buttonSquare.Size = new System.Drawing.Size(84, 23);
+            this.buttonSquare.TabIndex = 0;
+            this.buttonSquare.Text = "Count square\r\n";
+            this.buttonSquare.UseVisualStyleBackColor = true;
+            this.buttonSquare.Click += new System.EventHandler(this.buttonSquare_Click);
             // 
             // ObjectForm
             // 
@@ -91,6 +104,7 @@
             this.Controls.Add(this.groupBoxEditing);
             this.Name = "ObjectForm";
             this.Text = "ObjectForm";
+            this.groupBoxEditing.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -100,5 +114,6 @@
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonRandom;
         private System.Windows.Forms.GroupBox groupBoxEditing;
+        private System.Windows.Forms.Button buttonSquare;
     }
 }

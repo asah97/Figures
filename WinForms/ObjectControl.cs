@@ -61,12 +61,12 @@ namespace WinForms
                 {
                     var rect = new Rectangle();
 
-                rect.StartX = Convert.ToDouble(maskedTextBoxX.Text);
-                rect.StartY = Convert.ToDouble(maskedTextBoxY.Text);
-                rect.Width = Convert.ToDouble(maskedTextBoxWidth.Text);
-                rect.Length = Convert.ToDouble(maskedTextBoxLength.Text);
+                    rect.StartX = Convert.ToDouble(maskedTextBoxX.Text);
+                    rect.StartY = Convert.ToDouble(maskedTextBoxY.Text);
+                    rect.Width = Convert.ToDouble(maskedTextBoxWidth.Text);
+                    rect.Length = Convert.ToDouble(maskedTextBoxLength.Text);
 
-                return rect;
+                    _object = rect;
                 }
                 else if (comboBoxFigure.SelectedIndex == 2)
                 {
@@ -177,12 +177,7 @@ namespace WinForms
                 textBoxSquare.Text = "";
             }
         }
-        //TODO: Не считать площадь при неправильном создании треугольника
-        private void buttonSquare_Click(object sender, EventArgs e)
-        {
-            textBoxSquare.Text = Convert.ToString(Figure.GetArea());
-        }
-
+        
         private void comboBoxFigure_SelectedIndexChanged(object sender, EventArgs e)
         {
             maskedTextBoxRadius.Visible = comboBoxFigure.SelectedIndex == 0;
