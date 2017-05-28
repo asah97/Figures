@@ -9,7 +9,6 @@ namespace WinForms
 {
     public partial class FiguresForm : Form
     {
-        //TODO: Настроить свойство Anchor для формы
         private ObjectControlBasic mainFigureControl = new ObjectControlBasic();
 
         public FiguresForm()
@@ -20,10 +19,10 @@ namespace WinForms
             mainFigureControl.Location = new System.Drawing.Point(7, 15);
             mainFigureControl.ReadOnly = true;
             mainFigureControl.Size = new System.Drawing.Size(344, 247);
-            
+
             if (FiguresList.listFigures.Count != 0)
             {
-                mainFigureControl.Figure = FiguresList.listFigures[dataGridViewFigures.SelectedCells[0].RowIndex];
+               mainFigureControl.Figure = FiguresList.listFigures[dataGridViewFigures.SelectedCells[0].RowIndex];
             }
         }
 
@@ -106,18 +105,19 @@ namespace WinForms
             }
         }
 
-        //Сериализация (сохранение) списка
+       //Сериализация (сохранение) списка
        private void savingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Serialization serial = new Serialization();
             JsonSerializer ser = serial.SerialAccess;
+
+            saveFile.Filter = "Списки фигур (*.goo)|*.goo";
             if (FiguresList.listFigures.Count == 0)
             {
                 MessageBox.Show("Список фигур пуст.");
             }
             else if (saveFile.ShowDialog() == DialogResult.OK)
             {
-                saveFile.Filter = "Списки фигур (.goo)|*.goo";
                 using (StreamWriter sw = new StreamWriter(saveFile.FileName))
                 {
                     using (JsonWriter writer = new JsonTextWriter(sw))
@@ -152,5 +152,11 @@ namespace WinForms
             }
         }
 
+        private void dataGridViewFigures_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewCell cell = dataGridViewFigures.CurrentCell;
+            int position = cell.RowIndex;
+            mainFigureControl.Figure = FiguresList.listFigures[position];
+        }
     }
 }
