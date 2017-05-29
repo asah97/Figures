@@ -11,6 +11,8 @@ namespace WinForms
     {
         private ObjectControlBasic mainFigureControl = new ObjectControlBasic();
 
+        public FiguresList list = new FiguresList();
+
         public FiguresForm()
         {
             InitializeComponent();
@@ -20,9 +22,9 @@ namespace WinForms
             mainFigureControl.ReadOnly = true;
             mainFigureControl.Size = new System.Drawing.Size(344, 247);
 
-            if (FiguresList.listFigures.Count != 0)
+            if (list.listFigures.Count != 0)
             {
-               mainFigureControl.Figure = FiguresList.listFigures[dataGridViewFigures.SelectedCells[0].RowIndex];
+               mainFigureControl.Figure = list.listFigures[dataGridViewFigures.SelectedCells[0].RowIndex];
             }
         }
 
@@ -37,8 +39,8 @@ namespace WinForms
                 return;
             }
             dataGridViewFigures.Rows.Add(figure.GetType().Name, figure.StartX, figure.StartY, figure.GetArea());
-            FiguresList.listFigures.Add(figure);
-            mainFigureControl.Figure = FiguresList.listFigures[dataGridViewFigures.SelectedCells[0].RowIndex];
+            list.listFigures.Add(figure);
+            mainFigureControl.Figure = list.listFigures[dataGridViewFigures.SelectedCells[0].RowIndex];
         }
 
         //Кнопка удаления строки из списка 
@@ -52,8 +54,8 @@ namespace WinForms
             {
                 int removeIndex = dataGridViewFigures.CurrentCell.RowIndex;
                 dataGridViewFigures.Rows.RemoveAt(removeIndex);
-                FiguresList.listFigures.RemoveAt(removeIndex);
-                mainFigureControl.Clear();;
+                list.listFigures.RemoveAt(removeIndex);
+                mainFigureControl.Clear();
             }
         }
 
@@ -68,18 +70,18 @@ namespace WinForms
             {
                 int modIndex = dataGridViewFigures.CurrentCell.RowIndex;
 
-                ObjectForm formMod = new ObjectForm(modIndex);
-                formMod.EditingFigure = FiguresList.listFigures[modIndex];
+                ObjectForm formMod = new ObjectForm(modIndex, list);
+                formMod.EditingFigure = list.listFigures[modIndex];
                 formMod.ShowDialog();
                 var newFigure = formMod.EditingFigure;
                 if (formMod.EditingFigure == null)
                 {
                     return;
                 }
-                FiguresList.listFigures.Insert(dataGridViewFigures.SelectedCells[0].RowIndex, newFigure);
-                FiguresList.listFigures.RemoveAt(dataGridViewFigures.SelectedCells[0].RowIndex + 1);
+                list.listFigures.Insert(dataGridViewFigures.SelectedCells[0].RowIndex, newFigure);
+                list.listFigures.RemoveAt(dataGridViewFigures.SelectedCells[0].RowIndex + 1);
                 dataGridViewFigures.Rows.Clear();
-                foreach (var data in FiguresList.listFigures)
+                foreach (var data in list.listFigures)
                 {
                     dataGridViewFigures.Rows.Add(data.GetType().Name, data.StartX, data.StartY, data.GetArea());
                 }
@@ -109,22 +111,16 @@ namespace WinForms
        private void savingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Serialization serial = new Serialization();
-            JsonSerializer ser = serial.SerialAccess;
-
+            
             saveFile.Filter = "Списки фигур (*.goo)|*.goo";
-            if (FiguresList.listFigures.Count == 0)
+            if (list.listFigures.Count == 0)
             {
                 MessageBox.Show("Список фигур пуст.");
             }
             else if (saveFile.ShowDialog() == DialogResult.OK)
             {
-                using (StreamWriter sw = new StreamWriter(saveFile.FileName))
-                {
-                    using (JsonWriter writer = new JsonTextWriter(sw))
-                    {
-                        ser.Serialize(writer, FiguresList.listFigures);
-                    }
-                }
+                serial.Serializing(saveFile, list);
+                
                 MessageBox.Show("Список сохранен.");
             }
         }
@@ -132,31 +128,25 @@ namespace WinForms
         private void openingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Serialization serial = new Serialization();
-            JsonSerializer ser = serial.SerialAccess;
-
+            
             openFile.Filter = "Списки фигур (.goo)|*.goo";
             if (openFile.ShowDialog() == DialogResult.OK)
             {
-                using (StreamReader sr = new StreamReader(openFile.FileName))
+                serial.Deserializing(openFile, list);
+                foreach (var data in list.listFigures)
                 {
-                    using (JsonReader reader = new JsonTextReader(sr))
-                    {
-                        FiguresList.listFigures = (List<IFigure>)ser.Deserialize(reader, typeof(List<IFigure>));
-                        dataGridViewFigures.Rows.Clear();
-                        foreach (var data in FiguresList.listFigures)
-                        {
-                            dataGridViewFigures.Rows.Add(data.GetType().Name, data.StartX, data.StartY, data.GetArea());
-                        }
-                    }
+                    dataGridViewFigures.Rows.Add(data.GetType().Name, data.StartX, data.StartY, data.GetArea());
                 }
             }
         }
+    
+
 
         private void dataGridViewFigures_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewCell cell = dataGridViewFigures.CurrentCell;
             int position = cell.RowIndex;
-            mainFigureControl.Figure = FiguresList.listFigures[position];
+            mainFigureControl.Figure = list.listFigures[position];
         }
     }
 }

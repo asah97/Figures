@@ -8,7 +8,7 @@ namespace WinForms
     public partial class ObjectForm : Form
     {
         private ObjectControlBasic EditingFigureControl = new ObjectControlBasic();
-
+        
         public IFigure EditingFigure;
 
         public ObjectForm()
@@ -25,7 +25,7 @@ namespace WinForms
             #endif
         }
 
-        public ObjectForm(int numRow)
+        public ObjectForm(int numRow, FiguresList list)
         {
             InitializeComponent();
 
@@ -33,18 +33,18 @@ namespace WinForms
             EditingFigureControl.Location = new Point(12, 14);
             EditingFigureControl.ReadOnly = false;
             EditingFigureControl.Size = new Size(344,247);
-            EditingFigureControl.Figure = FiguresList.listFigures[numRow];
+            EditingFigureControl.Figure = list.listFigures[numRow];
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Cancel;
+            EditingFigure = null;
             Close();
         }
 
         private void buttonOk_Click(object sender, EventArgs e)
         {
-            if (EditingFigureControl.CloseCondition())
+            if (EditingFigureControl.CloseCondition)
             {
                 EditingFigure = EditingFigureControl.Figure;
                 Close();
