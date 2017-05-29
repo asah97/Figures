@@ -87,20 +87,22 @@
             // maskedTextBoxY
             // 
             this.maskedTextBoxY.Location = new System.Drawing.Point(43, 47);
-            this.maskedTextBoxY.Mask = "#09.009";
+            this.maskedTextBoxY.Mask = "#00.000";
             this.maskedTextBoxY.Name = "maskedTextBoxY";
+            this.maskedTextBoxY.ResetOnSpace = false;
             this.maskedTextBoxY.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxY.TabIndex = 1;
+            this.maskedTextBoxY.TextChanged += new System.EventHandler(this.maskedTextBoxY_TextChanged);
             // 
             // maskedTextBoxX
             // 
             this.maskedTextBoxX.Location = new System.Drawing.Point(43, 21);
-            this.maskedTextBoxX.Mask = "#90.009";
+            this.maskedTextBoxX.Mask = "#00.000";
             this.maskedTextBoxX.Name = "maskedTextBoxX";
-            this.maskedTextBoxX.ResetOnPrompt = false;
             this.maskedTextBoxX.ResetOnSpace = false;
             this.maskedTextBoxX.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxX.TabIndex = 0;
+            this.maskedTextBoxX.TextChanged += new System.EventHandler(this.maskedTextBoxX_TextChanged);
             // 
             // comboBoxFigure
             // 
@@ -194,50 +196,63 @@
             // maskedTextBoxSideC
             // 
             this.maskedTextBoxSideC.Location = new System.Drawing.Point(191, 73);
-            this.maskedTextBoxSideC.Mask = "09.009";
+            this.maskedTextBoxSideC.Mask = "00.000";
             this.maskedTextBoxSideC.Name = "maskedTextBoxSideC";
+            this.maskedTextBoxSideC.ResetOnSpace = false;
             this.maskedTextBoxSideC.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxSideC.TabIndex = 5;
+            this.maskedTextBoxSideC.TextChanged += new System.EventHandler(this.maskedTextBoxSideC_TextChanged);
             // 
             // maskedTextBoxSideB
             // 
             this.maskedTextBoxSideB.Location = new System.Drawing.Point(191, 46);
-            this.maskedTextBoxSideB.Mask = "09.009";
+            this.maskedTextBoxSideB.Mask = "00.000";
             this.maskedTextBoxSideB.Name = "maskedTextBoxSideB";
+            this.maskedTextBoxSideB.ResetOnSpace = false;
             this.maskedTextBoxSideB.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxSideB.TabIndex = 4;
+            this.maskedTextBoxSideB.TextChanged += new System.EventHandler(this.maskedTextBoxSideB_TextChanged);
             // 
             // maskedTextBoxSideA
             // 
             this.maskedTextBoxSideA.Location = new System.Drawing.Point(191, 19);
-            this.maskedTextBoxSideA.Mask = "09.009";
+            this.maskedTextBoxSideA.Mask = "00.000";
             this.maskedTextBoxSideA.Name = "maskedTextBoxSideA";
+            this.maskedTextBoxSideA.ResetOnSpace = false;
+            this.maskedTextBoxSideA.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.maskedTextBoxSideA.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxSideA.TabIndex = 3;
+            this.maskedTextBoxSideA.TextChanged += new System.EventHandler(this.maskedTextBoxSideA_TextChanged);
             // 
             // maskedTextBoxRadius
             // 
             this.maskedTextBoxRadius.Location = new System.Drawing.Point(43, 73);
-            this.maskedTextBoxRadius.Mask = "09.009";
+            this.maskedTextBoxRadius.Mask = "00.000";
             this.maskedTextBoxRadius.Name = "maskedTextBoxRadius";
+            this.maskedTextBoxRadius.ResetOnSpace = false;
             this.maskedTextBoxRadius.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxRadius.TabIndex = 2;
+            this.maskedTextBoxRadius.TextChanged += new System.EventHandler(this.maskedTextBoxRadius_TextChanged);
             // 
             // maskedTextBoxLength
             // 
             this.maskedTextBoxLength.Location = new System.Drawing.Point(43, 46);
-            this.maskedTextBoxLength.Mask = "09.009";
+            this.maskedTextBoxLength.Mask = "00.000";
             this.maskedTextBoxLength.Name = "maskedTextBoxLength";
+            this.maskedTextBoxLength.ResetOnSpace = false;
             this.maskedTextBoxLength.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxLength.TabIndex = 1;
+            this.maskedTextBoxLength.TextChanged += new System.EventHandler(this.maskedTextBoxLength_TextChanged);
             // 
             // maskedTextBoxWidth
             // 
             this.maskedTextBoxWidth.Location = new System.Drawing.Point(43, 19);
-            this.maskedTextBoxWidth.Mask = "09.009";
+            this.maskedTextBoxWidth.Mask = "00.000";
             this.maskedTextBoxWidth.Name = "maskedTextBoxWidth";
+            this.maskedTextBoxWidth.ResetOnSpace = false;
             this.maskedTextBoxWidth.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxWidth.TabIndex = 0;
+            this.maskedTextBoxWidth.TextChanged += new System.EventHandler(this.maskedTextBoxWidth_TextChanged);
             // 
             // textBoxSquare
             // 

@@ -64,7 +64,7 @@
             this.groupBox1.Controls.Add(this.dataGridViewFigures);
             this.groupBox1.Location = new System.Drawing.Point(9, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(458, 204);
+            this.groupBox1.Size = new System.Drawing.Size(458, 243);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Object List";
@@ -72,7 +72,7 @@
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.Location = new System.Drawing.Point(249, 180);
+            this.label1.Location = new System.Drawing.Point(249, 219);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 13);
             this.label1.TabIndex = 6;
@@ -81,7 +81,7 @@
             // textBoxSearchType
             // 
             this.textBoxSearchType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBoxSearchType.Location = new System.Drawing.Point(351, 177);
+            this.textBoxSearchType.Location = new System.Drawing.Point(351, 216);
             this.textBoxSearchType.Name = "textBoxSearchType";
             this.textBoxSearchType.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearchType.TabIndex = 5;
@@ -90,7 +90,7 @@
             // buttonModify
             // 
             this.buttonModify.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonModify.Location = new System.Drawing.Point(134, 175);
+            this.buttonModify.Location = new System.Drawing.Point(134, 214);
             this.buttonModify.Name = "buttonModify";
             this.buttonModify.Size = new System.Drawing.Size(58, 23);
             this.buttonModify.TabIndex = 4;
@@ -101,7 +101,7 @@
             // buttonAdd
             // 
             this.buttonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonAdd.Location = new System.Drawing.Point(6, 175);
+            this.buttonAdd.Location = new System.Drawing.Point(6, 214);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(58, 23);
             this.buttonAdd.TabIndex = 1;
@@ -112,7 +112,7 @@
             // buttonRemove
             // 
             this.buttonRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonRemove.Location = new System.Drawing.Point(70, 175);
+            this.buttonRemove.Location = new System.Drawing.Point(70, 214);
             this.buttonRemove.Name = "buttonRemove";
             this.buttonRemove.Size = new System.Drawing.Size(58, 23);
             this.buttonRemove.TabIndex = 2;
@@ -135,7 +135,7 @@
             this.dataGridViewFigures.Location = new System.Drawing.Point(6, 18);
             this.dataGridViewFigures.Name = "dataGridViewFigures";
             this.dataGridViewFigures.ReadOnly = true;
-            this.dataGridViewFigures.Size = new System.Drawing.Size(446, 149);
+            this.dataGridViewFigures.Size = new System.Drawing.Size(446, 188);
             this.dataGridViewFigures.TabIndex = 0;
             this.dataGridViewFigures.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewFigures_CellClick);
             // 
@@ -190,14 +190,14 @@
             // openingToolStripMenuItem
             // 
             this.openingToolStripMenuItem.Name = "openingToolStripMenuItem";
-            this.openingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openingToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.openingToolStripMenuItem.Text = "Открыть";
             this.openingToolStripMenuItem.Click += new System.EventHandler(this.openingToolStripMenuItem_Click);
             // 
             // savingToolStripMenuItem
             // 
             this.savingToolStripMenuItem.Name = "savingToolStripMenuItem";
-            this.savingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.savingToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.savingToolStripMenuItem.Text = "Сохранить";
             this.savingToolStripMenuItem.Click += new System.EventHandler(this.savingToolStripMenuItem_Click);
             // 
@@ -231,6 +231,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBoxData);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FiguresForm";
             this.Text = "FiguresForm";
             this.groupBox1.ResumeLayout(false);

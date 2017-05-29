@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Figures;
 
@@ -15,32 +16,40 @@ namespace WinForms
             InitializeComponent();
         }
 
-        public bool CloseCondition()
+        public bool CloseCondition
         {
-            _closeCondition = false;
-            if (maskedTextBoxX.Text == "   ," && maskedTextBoxY.Text == "   ,")
+            get
             {
-                MessageBox.Show("Не были введены начальные координаты фигуры!");
-                return _closeCondition;
+                if (maskedTextBoxX.Text == "   ," || maskedTextBoxY.Text == "   ,")
+                {
+                    MessageBox.Show("Не были введены начальные координаты фигуры!");
+                    return _closeCondition;
+                }
+                if (comboBoxFigure.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Фигура не была выбрана!");
+                    return _closeCondition;
+                }
+                if (comboBoxFigure.SelectedIndex == 1 &&
+                    (maskedTextBoxLength.Text == "  ," || maskedTextBoxWidth.Text == "  ,"))
+                {
+                    MessageBox.Show("Не были введены длина и (или) ширина прямоугольника!");
+                    return _closeCondition;
+                }
+                if (comboBoxFigure.SelectedIndex == 0 && maskedTextBoxRadius.Text == "  ,")
+                {
+                    MessageBox.Show("Не был введен радиус");
+                    return _closeCondition;
+                }
+                if (comboBoxFigure.SelectedIndex == 2 && (maskedTextBoxSideA.Text == "  ," ||
+                                                          maskedTextBoxSideB.Text == "  ," ||
+                                                          maskedTextBoxSideC.Text == "  ,"))
+                {
+                    MessageBox.Show("Не все стороны треугольника были инициализированы!");
+                    return _closeCondition;
+                }
+                return _closeCondition = true;
             }
-            if (comboBoxFigure.SelectedIndex == 1 && (maskedTextBoxLength.Text == "  ," || maskedTextBoxWidth.Text == "  ,"))
-            {
-                MessageBox.Show("Не были введены длина и (или) ширина прямоугольника!");
-                return _closeCondition;
-            }
-            if (comboBoxFigure.SelectedIndex == 0 && maskedTextBoxRadius.Text == "  ,")
-            {
-                MessageBox.Show("Не был введен радиус");
-                return _closeCondition;
-            }
-            if (comboBoxFigure.SelectedIndex == 2 && (maskedTextBoxSideA.Text == "  ," ||
-                                                      maskedTextBoxSideB.Text == "  ," ||
-                                                      maskedTextBoxSideC.Text == "  ,"))
-            {
-                MessageBox.Show("Не все стороны треугольника были инициализированы!");
-                return _closeCondition;
-            }
-            return _closeCondition = true;
         }
        
         public IFigure Figure
@@ -163,19 +172,16 @@ namespace WinForms
 
         public void Clear()
         {
-            if (ReadOnly)
-            {
-                comboBoxFigure.SelectedIndex = -1;
-                maskedTextBoxX.Text = "";
-                maskedTextBoxY.Text = "";
-                maskedTextBoxWidth.Text = "";
-                maskedTextBoxLength.Text = "";
-                maskedTextBoxRadius.Text = "";
-                maskedTextBoxSideA.Text = "";
-                maskedTextBoxSideB.Text = "";
-                maskedTextBoxSideC.Text = "";
-                textBoxSquare.Text = "";
-            }
+            comboBoxFigure.SelectedIndex = -1;
+            maskedTextBoxX.Text = "";
+            maskedTextBoxY.Text = "";
+            maskedTextBoxWidth.Text = "";
+            maskedTextBoxLength.Text = "";
+            maskedTextBoxRadius.Text = "";
+            maskedTextBoxSideA.Text = "";
+            maskedTextBoxSideB.Text = "";
+            maskedTextBoxSideC.Text = "";
+            textBoxSquare.Text = "";
         }
         
         private void comboBoxFigure_SelectedIndexChanged(object sender, EventArgs e)
@@ -186,6 +192,46 @@ namespace WinForms
             maskedTextBoxSideA.Visible = comboBoxFigure.SelectedIndex == 2;
             maskedTextBoxSideB.Visible = comboBoxFigure.SelectedIndex == 2;
             maskedTextBoxSideC.Visible = comboBoxFigure.SelectedIndex == 2;
+        }
+
+        private void maskedTextBoxX_TextChanged(object sender, EventArgs e)
+        {
+            maskedTextBoxX.Text = new Regex(@"[ ]{2,}", RegexOptions.None).Replace(maskedTextBoxX.Text, @" ");
+        }
+
+        private void maskedTextBoxY_TextChanged(object sender, EventArgs e)
+        {
+            maskedTextBoxY.Text = new Regex(@"[ ]{2,}", RegexOptions.None).Replace(maskedTextBoxY.Text, @" ");
+        }
+
+        private void maskedTextBoxWidth_TextChanged(object sender, EventArgs e)
+        {
+            maskedTextBoxWidth.Text = new Regex(@"[ ]{2,}", RegexOptions.None).Replace(maskedTextBoxWidth.Text, @" ");
+        }
+
+        private void maskedTextBoxLength_TextChanged(object sender, EventArgs e)
+        {
+            maskedTextBoxLength.Text = new Regex(@"[ ]{2,}", RegexOptions.None).Replace(maskedTextBoxLength.Text, @" ");
+        }
+
+        private void maskedTextBoxRadius_TextChanged(object sender, EventArgs e)
+        {
+            maskedTextBoxRadius.Text = new Regex(@"[ ]{2,}", RegexOptions.None).Replace(maskedTextBoxRadius.Text, @" ");
+        }
+
+        private void maskedTextBoxSideA_TextChanged(object sender, EventArgs e)
+        {
+            maskedTextBoxSideA.Text = new Regex(@"[ ]{2,}", RegexOptions.None).Replace(maskedTextBoxSideA.Text, @" ");
+        }
+
+        private void maskedTextBoxSideB_TextChanged(object sender, EventArgs e)
+        {
+            maskedTextBoxSideB.Text = new Regex(@"[ ]{2,}", RegexOptions.None).Replace(maskedTextBoxSideB.Text, @" ");
+        }
+
+        private void maskedTextBoxSideC_TextChanged(object sender, EventArgs e)
+        {
+            maskedTextBoxSideC.Text = new Regex(@"[ ]{2,}", RegexOptions.None).Replace(maskedTextBoxSideC.Text, @" ");
         }
     }
 }
